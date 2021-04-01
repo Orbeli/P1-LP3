@@ -18,6 +18,11 @@ Projeto pode ser instalado com [Docker](https://www.docker.com/), caso opte por 
     docker-compose exec app composer dump-autoload
 ```
 
+2) Dar um composer install para instalar as dependências:
+```
+    docker-compose exec app composer install
+```
+
 3) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
 
 ---
