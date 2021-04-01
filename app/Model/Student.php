@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace model;
 
 class Student
 {
