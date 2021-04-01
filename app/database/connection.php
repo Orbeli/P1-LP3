@@ -1,20 +1,10 @@
 <?php
-    // $pdo = new PDO("pgsql:dbname=hello_flask_dev;host=db", "hello_flask", "hello_flask");
 
-    // $sql = $pdo->query("SELECT * FROM guizex");
+namespace database;
 
-    // if ($sql->rowCount() > 0) {
-    //     $usuarios = $sql->fetchAll();
+use PDO;
 
-    //     foreach ($usuarios as $user) {
-    //         echo "<br>".$user['nome'];
-    //     }
-    // } else {
-    //     echo "não foram encontrado usuários";
-    // }
-// require_once "../index.php";
-
-class Database {
+class Connection {
     // Connection variables
     private $host;
     private $dbName;
