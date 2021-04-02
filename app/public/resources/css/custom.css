@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    list-style: none;
+    vertical-align: baseline;
+    font-family: 'Source Sans Pro', sans-serif;
+    outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+}
+
+.content {
+    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    padding: 20px;
+}
+
+.footer {
+    flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    padding: 20px;
+}
+
+.icones-sociais {
+    font-size: 25px;
+    color: black !important;
+}
+
+.face-hover:hover {
+    color: #3b5998 !important;
+}
+
+.twitter-hover:hover {
+    color: #1da1f2 !important;
+}
+
+.whats-hover:hover {
+    color: #25d366 !important;
+}
+
+.left-link {
+    padding-left: 0px !important;
+}
+
+.index-title {
+    padding-top: 20px;
+    margin-bottom: 90px;
+}

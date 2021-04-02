@@ -9,21 +9,24 @@ Projeto pode ser instalado com [Docker](https://www.docker.com/), caso opte por 
 
 ---
 ## Install
-1)Para a instalação utilizando Docker basta ir no diretório raiz e:
+1)Primeiro é preciso renomear o arquivo .env.example para .env:
+
+2)Para a instalação utilizando Docker basta ir no diretório app/ e:
 ```
     docker-compose up -d --build
 ```
-2) Após rodar o comando que ira gerar o autoloader da aplicação:
+
+3) Após rodar o comando que ira gerar o autoloader da aplicação dentro do diretório app/:
 ```
     docker-compose exec app composer dump-autoload
 ```
 
-2) Dar um composer install para instalar as dependências:
+4) Dar um composer install para instalar as dependências dentro do diretório app/:
 ```
     docker-compose exec app composer install
 ```
 
-3) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
+5) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
 
 ---
 ## Links

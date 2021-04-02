@@ -1,8 +1,8 @@
 <?php
 
-namespace model;
+namespace Http\Model;
 
-class Student
+class User
 {
     private ?int $id;
     private string $name;
