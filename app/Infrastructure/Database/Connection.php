@@ -14,9 +14,9 @@ class Connection {
     public function __construct()
     {
       $this->host = $_ENV['HOST'];
-      $this->dbName = $_ENV['DATABASE'];
-      $this->username = $_ENV['USERNAME'];
-      $this->password = $_ENV['PASSWORD'];
+      $this->dbName = $_ENV['POSTGRES_DB'];
+      $this->username = $_ENV['POSTGRES_USER'];
+      $this->password = $_ENV['POSTGRES_PASSWORD'];
     }
 
     public $conn;
