@@ -14,8 +14,10 @@ services:
     image: postgres:12-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=database
 
 volumes:
   postgres_data:
