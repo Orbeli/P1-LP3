@@ -45,3 +45,9 @@ Matheus Lot Rizzo
 [E-mail](mailto:matheus.l.rizzo@gmail.com)
 [GitHub](https://github.com/MatheusLotRizzo)
 [Linkedin](https://www.linkedin.com/in/matheus-lot-rizzo-a71595159/)
+
+Ulisses da Silva Rosa
+
+[E-mail](mailto:ulisses.skysect@hotmail.com)
+[GitHub](https://github.com/UlissesSRosa)
+[Linkedin](https://www.linkedin.com/in/ulisses-rosa/)
