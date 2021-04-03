@@ -39,3 +39,9 @@ Gabriel Orbeli Rodrigues Belíssimo
 [E-mail](mailto:gabriel.orbeli@gmail.com)
 [GitHub](https://github.com/Orbeli)
 [Linkedin](https://www.linkedin.com/in/gabriel-orbeli-436815171/)
+
+Matheus Lot Rizzo
+
+[E-mail](mailto:matheus.l.rizzo@gmail.com)
+[GitHub](https://github.com/MatheusLotRizzo)
+[Linkedin](https://www.linkedin.com/in/matheus-lot-rizzo-a71595159/)
