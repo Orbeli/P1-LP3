@@ -51,3 +51,9 @@ Ulisses da Silva Rosa
 [E-mail](mailto:ulisses.skysect@hotmail.com)
 [GitHub](https://github.com/UlissesSRosa)
 [Linkedin](https://www.linkedin.com/in/ulisses-rosa/)
+
+Guilherme Henrique de Oliveira
+
+[E-mail](mailto:henriqueoliveiragui18@gmail.com)
+[GitHub](https://github.com/Guilherme1-jpg)
+[Linkedin](https://www.linkedin.com/in/guilherme-henrique-6b3389136/)
