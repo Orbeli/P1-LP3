@@ -33,3 +33,48 @@ footer{
 .content {
     flex: 1 0 auto;
 }
+
+/* inicio css do formulario Cadastro*/
+
+/* css do container*/
+#containerform{
+	width: 400px;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 80px;
+	text-align: center;
+	border: 1px groove #dbdbdb;
+}
+
+/* css das caixas de entrada de dados*/
+.boxtext{
+	height: 25px;
+	width: 80%;
+	font-size: 18px;
+	margin-top: 20px;
+	background-color: #fff;
+	padding-left: 20px;
+	border: 1px groove black;
+}
+
+/* css dos label*/
+.textformat{
+    font-size: 18px;
+}
+
+/* css do botão submit*/
+input.submit{
+	color: #fff;
+	background-color: #f79300;
+	border-color: 2px solid #db7d00;
+	padding: 5px 20px;
+	height: 45px;
+	width: 90%;
+
+	background: -webkit-linear-gradient(to bottom, #faa600, #f68a00);
+	background: -moz-linear-gradient(to bottom, #faa600, #f68a00);
+	background: -o-linear-gradient(to bottom, #faa600, #f68a00);
+	background: linear-gradient(to bottom, #faa600, #f68a00);
+}
+
+/* fim css do formulario Cadastro*/
