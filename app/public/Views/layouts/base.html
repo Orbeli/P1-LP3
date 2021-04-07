@@ -1,138 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Consultório Odontológico</title>
-
-        <!-- Metas -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Robots -->
-        <meta name="rating" content="General">
-        <meta name="robots" content="noindex, nofollow">
-        <meta name="revisit-after" content="1">
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="icon.png">
-
-        <!-- carrega o css -->
-        <link rel="stylesheet" type="text/css" href="Public/Resources/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="Public/Resources/css/custom.css">
-
-        <!-- css externo -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-        <!-- carrega os estilos  -->
-        <style>
-            .navbar-header .logo-header {
-                margin-left: 15px;
-                margin-top: 14px;
-            }
-
-            .navbar-header .logo-header img {
-                height: 50px;
-            }
-
-            .wrapper {
-                display: flex;
-                flex-flow: row wrap;
-                font-weight: bold;
-                text-align: center;
-            }
-
-            .header {
-                text-align: left;
-                flex: 1 100%;
-                height: 80px;
-                z-index: 1;
-            }
-
-            .conteudo {
-                text-align: left;
-                height: calc(100vh - 80px);
-                overflow: auto;
-            }
-
-            .aside-1 {
-                flex: 1 60px;
-            }
-
-            @media all and (min-width: 800px) {
-                .aside-1 {
-                    order: 1;
-                }
-
-                .conteudo{
-                    order: 2;
-                    flex: 1 calc(100vw - 60px);
-                }
-
-                .aside-2 {
-                    order: 3;
-                }
-
-                .footer  {
-                    order: 4;
-                }
-            }
-
-            body {
-                padding: 0px;
-                margin:0px;
-                background: rgb(255,255,255);
-                background: linear-gradient(82deg, rgba(255,255,255,0) 0%, rgba(189,189,189,1) 84%);
-            }
-
-        </style>
+        <title>!Dent</title>
+         <!-- Metas -->
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+ 
+         <!-- Robots -->
+         <meta name="rating" content="General">
+         <meta name="robots" content="noindex, nofollow">
+         <meta name="revisit-after" content="1">
+ 
+         <!-- Favicon -->
+         <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
+ 
+         <!-- carrega o css -->
+         <link rel="stylesheet" type="text/css" href="Public/Resources/css/bootstrap.min.css">
+         <link rel="stylesheet" type="text/css" href="Public/Resources/css/custom.css">
+ 
+         <!-- css externo -->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     </head>
-
+    
     <body>
-        <div class="wrapper">
-            <header class="header">
-                <aside class="aside aside-1">
-                    {% block header %}
-                        {% include 'layouts/header.html' %}
-                    {% endblock %}
-                </aside>
-                <div class="navbar-header">
-                    <div class="logo-header">
-                        <!-- <a href="/"><img src="Public/Resources/img/img_test.jpg" alt=""></a> -->
-                    </div>
-                </div>
-            </header>
 
-            <article class="conteudo col-md-12">
-                {% block content %}
+        {% block header %}
+            {% include 'layouts/header.html' %}
+        {% endblock %}
+        
+        <article class="conteudo col-md-12">
+            {% block content %}
 
-                {% endblock %}
-            </article>
+            {% endblock %}
+        </article>
 
-            <!-- MODAIS -->
-        </div>
 
         <footer>
             <div class="container p-0 pb-0">
-              <p>&copy;Copyright</p>
-              <p>Trabalho feito para a disciplina de Linguagem de Programacao 3</p>
-              
-              <section class="mb-0">
+                <p>&copy;Copyright</p>
+                <p>Trabalho feito para a disciplina de Linguagem de Programacao 3</p>
+                <section class="mb-0">
                     <a class="btn btn-outline-primary btn-floating" href="#" role="button">
-                     <img src="image/twitter.png" width="20px">
-      
+                    <img src="/public/resources/img/image/twitter.png" width="20px">
                     <a class="btn btn-outline-primary btn-floating" href="#" role="button">
-                     <img src="image/facebook.png" width="20px">
+                    <img src="/public/resources/img/image/facebook.png" width="20px">
                     </a>
-      
                     <a class="btn btn-outline-primary btn-floating" href="#" role="button">
-                      <img src="image/linkedin.png" width="20px">
+                    <img src="/public/resources/img/image/linkedin.png" width="20px">
                     </a>
                     <a class="btn btn-outline-danger btn-floating" href="#">
-                      <img src="image/instagram.png" width="20px">
-                  </a>
-              </section>
+                    <img src="/public/resources/img/image/instagram.png" width="20px">
+                    </a>
+                </section>
             </div>
-      </footer>
+        </footer>
     </body>
 </html>
 
