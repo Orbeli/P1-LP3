@@ -1,55 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-weight: 400;
-    list-style: none;
-    vertical-align: baseline;
-    font-family: 'Source Sans Pro', sans-serif;
-    outline: none;
-}
-
-html {
-    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+    background: rgb(255,255,255);
+    background: linear-gradient(82deg, rgba(255,255,255,0) 0%, rgba(189,189,189,1) 80%);
+    height: 100%;
+    margin-bottom: 40px;
 }
 
-.content {
-    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
-    padding: 20px;
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    color:#fff;
+    text-align: center;
+    font-size: 00.87em;
+    display: inline-block;
 }
 
-.footer {
-    flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
-    padding: 20px;
-}
-
-.icones-sociais {
-    font-size: 25px;
-    color: black !important;
-}
-
-.face-hover:hover {
-    color: #3b5998 !important;
-}
-
-.twitter-hover:hover {
-    color: #1da1f2 !important;
-}
-
-.whats-hover:hover {
-    color: #25d366 !important;
-}
-
-.left-link {
-    padding-left: 0px !important;
-}
-
-.index-title {
-    padding-top: 20px;
-    margin-bottom: 90px;
-}
