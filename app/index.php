@@ -14,4 +14,4 @@ $conn = new Connection();
 $db = $conn->dbConnection();
 $conn = $db;
 
-require_once 'Public/Views/home.php';
+require_once 'Public/views/home.php';
