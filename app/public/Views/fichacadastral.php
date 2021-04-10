@@ -94,7 +94,7 @@
                 name="rg" 
                 id="rg" 
                 placeholder="RG: 00.000.000-0"
-                maxlength="9"/>
+                maxlength="13"/>
             <br><br>
             <label class="textformat">
             Digite seu CPF:
@@ -105,7 +105,7 @@
                 name="cpf" 
                 id="cpf" 
                 placeholder="CPF: 000.000.000-00"
-                maxlength="11"/>
+                maxlength="15"/>
             <br><br>
             <label class="textformat">
             Digite seu estado civil:
@@ -123,8 +123,8 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="Naturalidade" 
-                id="Naturalidade" 
+                name="naturalidade" 
+                id="naturalidade" 
                 placeholder="Naturalidade"/>
             <br><br>
             <label class="textformat">
@@ -133,8 +133,8 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="Estado" 
-                id="Estado" 
+                name="estado" 
+                id="estado" 
                 placeholder="Estado"/>
             <br><br>
             <label class="textformat">
@@ -178,23 +178,13 @@
                 placeholder="Nacionalidade da Mãe"/>
             <br><br>
             <label class="textformat">
-            Digite seu telefone:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="telefone" 
-                id="telefone" 
-                placeholder="Telefone"/>
-            <br><br>
-            <label class="textformat">
             Digite seu celular:
             </label><br>
             <input
                 class="boxtext" 
                 type="text" 
-                name="celular" 
-                id="celular" 
+                name="contato" 
+                id="contato" 
                 placeholder="Celular"/>
             <br><br>
             <label class="textformat">
@@ -203,19 +193,19 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="cep_endereco" 
-                id="cep_endereco" 
+                name="CEP" 
+                id="CEP" 
                 placeholder="Cep"
                 maxlength="8"/>
             <br><br>
             <label class="textformat">
-            Digite seu endereço:
+            Digite o nome da rua:
             </label><br>
             <input
                 class="boxtext" 
                 type="text" 
-                name="nome_endereco" 
-                id="nome_endereco" 
+                name="rua" 
+                id="rua" 
                 placeholder="Endereço"/>
             <br><br>
             <label class="textformat">
@@ -234,8 +224,8 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="complemento_endereco" 
-                id="complemento_endereco" 
+                name="complemento" 
+                id="complemento" 
                 placeholder="Complemento"/>
             <br><br>
             <label class="textformat">
@@ -244,8 +234,8 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="bairro_endereco" 
-                id="bairro_endereco" 
+                name="bairro" 
+                id="bairro" 
                 placeholder="Bairro"/>
             <br><br>
             <label class="textformat">

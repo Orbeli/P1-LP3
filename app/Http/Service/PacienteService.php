@@ -14,10 +14,59 @@ class PacienteService {
 	}
 
 	public function inserir() { //create
-		$query = 'INSERT INTO pacientes (nome) VALUES (?)';
+		$query = 'INSERT INTO paciente (nome, data_nasc, sexo, peso, altura, cor, escolaridade, profissao, rg, cpf, estado_civil, naturalidade, estado) VALUES (
+			:nome,
+			:data_nasc,
+			:sexo,
+			:peso,
+			:altura,
+			:cor,
+			:escolaridade,
+			:profissao,
+			:rg,
+			:cpf,
+			:estado_civil,
+			:naturalidade,
+			:estado
+		) RETURNING id';
+
 		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(1, $this->paciente->__get('nome'));
-		$stmt->execute();
+		$stmt->bindValue(':nome', $this->paciente->__get('nome'));
+		$stmt->bindValue(':data_nasc', $this->paciente->__get('data_nasc'));
+		$stmt->bindValue(':sexo', $this->paciente->__get('sexo'));
+		$stmt->bindValue(':peso', $this->paciente->__get('peso'));
+		$stmt->bindValue(':altura', $this->paciente->__get('altura'));
+		$stmt->bindValue(':cor', $this->paciente->__get('cor'));
+		$stmt->bindValue(':escolaridade', $this->paciente->__get('escolaridade'));
+		$stmt->bindValue(':profissao', $this->paciente->__get('profissao'));
+		$stmt->bindValue(':rg', $this->paciente->__get('rg'));
+		$stmt->bindValue(':cpf', $this->paciente->__get('cpf'));
+		$stmt->bindValue(':estado_civil', $this->paciente->__get('estado_civil'));
+		$stmt->bindValue(':naturalidade', $this->paciente->__get('naturalidade'));
+		$stmt->bindValue(':estado', $this->paciente->__get('estado'));
+		
+		if($stmt->execute()) {
+			$id = $stmt->fetchColumn();
+			$this->paciente->__set('id', $id);
+
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	public function get_paciente() {
+		$query = 'SELECT id FROM paciente WHERE cpf = :cpf';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':cpf', $this->paciente->__get('cpf'));
+
+		// return $stmt->execute();
+		$exec = $stmt->execute();
+		$result = $stmt->fetchAll();
+		$strTable = "paciente";
+		echo '<pre>';
+		print_r($this->conexao->lastInsertId("$strTable_id_seq"));
+		exit;
 	}
 
 	// public function recuperar() { //read
