@@ -41,6 +41,36 @@ CREATE TABLE filiacao (
   FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
 );
 
+CREATE TABLE questionario ( 
+  id SERIAL PRIMARY KEY,
+  queixa VARCHAR(255),
+  historico VARCHAR(255),
+  hemorragia BOOLEAN,
+  alergia BOOLEAN,
+  reumatismo BOOLEAN,
+  disturbio_cardiovascular BOOLEAN,
+  gastrite BOOLEAN,
+  diabetico BOOLEAN,
+  desmaio BOOLEAN,
+  tratamento BOOLEAN,
+  medicamento BOOLEAN,
+  doenca_operacao BOOLEAN,
+  vicios BOOLEAN,
+  ansiedade_depressao BOOLEAN,
+  tuberculose BOOLEAN,
+  sifilis BOOLEAN,
+  hepatite BOOLEAN,
+  aids BOOLEAN,
+  sarampo BOOLEAN,
+  caxumba BOOLEAN,
+  varicela BOOLEAN,
+  outros VARCHAR(255),
+  fumante BOOLEAN,
+  frequencia VARCHAR(3),
+  paciente_id INTEGER,
+  FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
+);
+
 SELECT * FROM paciente
 INNER JOIN filiacao ON
   paciente.id = filiacao.paciente_id;

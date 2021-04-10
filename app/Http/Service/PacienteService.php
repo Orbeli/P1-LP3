@@ -55,20 +55,6 @@ class PacienteService {
 		return FALSE;
 	}
 
-	public function get_paciente() {
-		$query = 'SELECT id FROM paciente WHERE cpf = :cpf';
-		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(':cpf', $this->paciente->__get('cpf'));
-
-		// return $stmt->execute();
-		$exec = $stmt->execute();
-		$result = $stmt->fetchAll();
-		$strTable = "paciente";
-		echo '<pre>';
-		print_r($this->conexao->lastInsertId("$strTable_id_seq"));
-		exit;
-	}
-
 	// public function recuperar() { //read
 	// 	$query = '
 	// 		select 
