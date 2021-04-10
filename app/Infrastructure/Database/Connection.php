@@ -1,8 +1,9 @@
 <?php
 
-namespace Infrastructure\Database;
+// namespace Infrastructure\Database;
 
-use PDO;
+// use PDO;
+require_once '../../vendor/autoload.php';
 
 class Connection {
     // Connection variables
@@ -13,10 +14,13 @@ class Connection {
 
     public function __construct()
     {
-      $this->host = $_ENV['HOST'];
-      $this->dbName = $_ENV['POSTGRES_DB'];
-      $this->username = $_ENV['POSTGRES_USER'];
-      $this->password = $_ENV['POSTGRES_PASSWORD'];
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->safeload();
+
+        $this->host = $_ENV['HOST'];
+        $this->dbName = $_ENV['POSTGRES_DB'];
+        $this->username = $_ENV['POSTGRES_USER'];
+        $this->password = $_ENV['POSTGRES_PASSWORD'];
     }
 
     public $conn;
