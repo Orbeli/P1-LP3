@@ -137,11 +137,19 @@ CREATE TABLE exame_fisico (
   complementares VARCHAR(70),
   definitivo VARCHAR(35),
   proservacao VARCHAR(255),
-  tratamento VARCHAR(255),
+  plano VARCHAR(255),
   alunos_exame VARCHAR(100),
   professor_exame VARCHAR(60),
   questionario_id INTEGER,
   FOREIGN KEY (questionario_id) REFERENCES questionario(id) ON DELETE CASCADE
+);
+
+CREATE TABLE prontuario (
+  id SERIAL PRIMARY KEY,
+  dia DATE,
+  procedimentos VARCHAR(255),
+  paciente_id INTEGER,
+  FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
 );
 
 SELECT * FROM paciente
@@ -154,6 +162,16 @@ INNER JOIN filiacao ON
   paciente.id = filiacao.paciente_id 
 INNER JOIN endereco ON 
   paciente.id = endereco.paciente_id;
+
+SELECT * FROM questionario
+INNER JOIN paciente ON
+  paciente.id = questionario.paciente_id
+INNER JOIN questionario_infantil ON
+  questionario.id = questionario_infantil.questionario_id
+INNER JOIN conduta_crianca ON
+  questionario.id = conduta_crianca.questionario_id
+INNER JOIN exame_fisico ON
+  questionario.id = exame_fisico.questionario_id WHERE paciente.id = 2;
 
 INSERT INTO paciente (nome,data_nasc,sexo,peso,altura,cor,escolaridade,profissao,rg,cpf,estado_civil,naturalidade,estado) VALUES (
     'gabriel',

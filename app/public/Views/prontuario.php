@@ -1,4 +1,8 @@
-<?php require_once 'layouts/base.php'; ?>
+<?php
+    $acao = 'recuperar';
+    require '../../Http/Controller/QuestionarioController.php';
+    require_once 'layouts/base.php';
+?>
 
 <!-- Content Section -->
 <div class="content col-md-12">
@@ -10,39 +14,39 @@
             <div class="controlcontainer firstcont">
                 <h4>Questionário de Saúde</h4>
                 <b>Queixa Principal</b><br>
-                InfoBanco
+                <?= $questionario->queixa ?>
                 <br>
 
                 <b>Histórico de Tratamento Atual</b><br>
-                InfoBanco
+                <?= $questionario->historico ?>
                 <br>
 
-                <b>1- Teve Hemorragiba?</b><br>
-                InfoBanco
+                <b>1- Teve Hemorragia?</b><br>
+                <?= $questionario->hemorragia == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>2- Sofre/sofreu alguma alergia?</b><br>
-                InfoBanco
+                <?= $questionario->alergia == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>3- Teve reumatisco infeccioso?</b><br>
-                InfoBanco
+                <?= $questionario->reumatismo == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>4- Sofre(u) de distúrbio cardiovascular?</b><br>
-                InfoBanco
+                <?= $questionario->disturbio_cardiovascular == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>5- Sofre(u) de gastrite?</b><br>
-                InfoBanco
+                <?= $questionario->gastrite == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>6- É diabético ou tem familiares diabéticos?</b><br>
-                InfoBanco
+                <?= $questionario->diabetico == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>7- Já desmaiou alguma vez?</b><br>
-                InfoBanco
+                <?= $questionario->desmaio == 1 ? 'Sim' : 'Não' ?>
                 <br>
             </div>
         </div>
@@ -51,68 +55,67 @@
             <div class="controlcontainer firstcont"> 
 
                 <b>8- Está sob tratamento médico?</b><br>
-                InfoBanco
+                <?= $questionario->tratamento == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>9- Está tomando algum medicamento?</b><br>
-                InfoBanco
+                <?= $questionario->medicamento == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>10- Esteve doente ou foi operado nos últimos 5 anos?</b><br>
-                InfoBanco
+                <?= $questionario->doenca_operacao == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>11- Tem hábitos, vícios ou manias?</b><br>
-                InfoBanco
+                <?= $questionario->vicios == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>12- Tem ansiedade/depressão?</b><br>
-                InfoBanco
+                <?= $questionario->ansiedade_depressao == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>13 -	Você e/ou algum familiar  teve algumas dessas doenças?</b><br>
-                InfoBanco
                 <br>
 
                 <div class="col-md-6">
                     <b>Tuberculose</b><br>
-                    InfoBanco
+                    <?= $questionario->tuberculose == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Sífilis</b><br>
-                    InfoBanco
+                    <?= $questionario->sifilis == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Hepatite A, B, C</b><br>
-                    InfoBanco
+                    <?= $questionario->hepatite == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>SIDA/AIDS</b><br>
-                    InfoBanco
+                    <?= $questionario->aids == 1 ? 'Sim' : 'Não' ?>
                     <br>
                 </div>
 
                 <div class="col-md-6">
                     <b>Sarampo</b><br>
-                    InfoBanco
+                    <?= $questionario->sarampo == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Caxumba</b><br>
-                    InfoBanco
+                    <?= $questionario->caxumba == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Varicela</b><br>
-                    InfoBanco
+                    <?= $questionario->varicela == 1 ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Outras</b><br>
-                    InfoBanco
+                    <?= $questionario->outros ?>
                     <br>
                 </div>
                 <br>
 
                 <b>14-	É fumante?</b><br>
-                InfoBanco  <b>Com que frequência?</b> InfoBanco <b>/dia</b><br>
+                <?= $questionario->fumante == 1 ? 'Sim' : 'Não' ?>  <b>Com que frequência?</b> <?= $questionario->frequencia ?> <b>/dia</b><br>
             </div>
         </div>
 
@@ -121,31 +124,31 @@
                 <h4 class="exibetitulo">Questionário Infantil</h4><br>
 
                 <b>Histórico Gestacional</b><br>
-                InfoBanco
+                <?= $questionario->gestacional ?>
                 <br>
 
                 <b>Nasceu de Parto</b><br>
-                InfoBanco
+                <?= $questionario->parto ?>
                 <br>
 
                 <b>Problemas Durante o Parto?</b><br>
-                InfoBanco
+                <?= $questionario->problemas_parto == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>A amamentação foi:</b><br>
-                InfoBanco <b>até a idade de:</b> InfoBanco <b>anos</b><br>
+                <?= $questionario->tipo_amamentacao ?> <b>até a idade de:</b> <?= $questionario->idade_amamentacao ?> <b>anos</b><br>
                 <br>
 
                 <b>Já lhe foi dito para não tomar anestesia local?</b><br>
-                InfoBanco
+                <?= $questionario->anestesia == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>Já teve ou viveu com alguém que tivesse doença grave e contagiosa?</b><br>
-                InfoBanco
+                <?= $questionario->doencao_contagiosa == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>A criança já foi vacinada?</b><br>
-                InfoBanco
+                <?= $questionario->vacinada == 1 ? 'Sim' : 'Não' ?>
                 <br>
             </div>
         </div>
@@ -155,22 +158,22 @@
                 <h4 class="exibetitulo">Conduta da Criança</h4>
 
                 <b>Durante os primeiros 2 anos de vida a criança:</b><br>
-                    <b>Sentou-se</b> InfoBanco <br>
-                    <b>Engatinhou</b> InfoBanco <br>
-                    <b>Andou</b> InfoBanco <br>
-                    <b>Falou</b> InfoBanco <br>
+                    <b>Sentou-se</b> <?= $questionario->sentou ? 'Sim' : 'Não' ?> <br>
+                    <b>Engatinhou</b> <?= $questionario->engatinhou ? 'Sim' : 'Não'  ?> <br>
+                    <b>Andou</b> <?= $questionario->andou ? 'Sim' : 'Não'  ?> <br>
+                    <b>Falou</b> <?= $questionario->falou ? 'Sim' : 'Não' ?> <br>
                 <br>
 
                 <b>No lar e na escola a criança apresentou alguma dificuldade no aprendizado?</b><br>
-                InfoBanco
+                <?= $questionario->dificuldade_aprendizado == 1 ? 'Sim' : 'Não' ?>
                 <br>
 
                 <b>Estado Anímico:</b><br>
-                InfoBanco
+                <?= $questionario->humor ?>
                 <br>
 
                 <b>Tem o sono:</b><br>
-                InfoBanco
+                <?= $questionario->sono ?>
                 <br>
             </div>
         </div>
@@ -180,19 +183,19 @@
                 <div class="controlcontainer lastcont"> 
                     <h4 class="exibetitulo">Apresenta Alguma Patologia de Conduta:</h4>
                     <b>Ansiedade:</b><br>
-                    InfoBanco
+                    <?= $questionario->ansiedade ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Medo:</b><br>
-                    InfoBanco
+                    <?= $questionario->medo ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Birra:</b><br>
-                    InfoBanco
+                    <?= $questionario->birra ? 'Sim' : 'Não' ?>
                     <br>
 
                     <b>Ciúme:</b><br>
-                    InfoBanco
+                    <?= $questionario->ciume ? 'Sim' : 'Não' ?>
                     <br>
                 </div>
             </div>
@@ -200,11 +203,11 @@
             <div class="col-md-6">
                 <div class="controlcontainer lastcont"> 
                     <h4 class="exibetitulo">Conduta Psicomotora:</h4>
-                    <b>Postura:</b> InfoBanco <br>
-                    <b>Fala:</b> InfoBanco <br>
-                    <b>Alguma Paralisia:</b> InfoBanco <br>
-                    <b>Enurese Noturna:</b> InfoBanco <br>
-                    <b>Descontrole dos Esfíncteres</b> InfoBanco <br>
+                    <b>Postura:</b> <?= $questionario->postura_normal == 1 ? 'Postura normal' : 'Postura alterada' ?> <br>
+                    <b>Fala:</b> <?= $questionario->fala_normal == 1 ? 'Fonação normal' : 'Distúrbios de fala' ?> <br>
+                    <b>Alguma Paralisia:</b> <?= $questionario->paralisia ? 'Sim' : 'Não' ?> <br>
+                    <b>Enurese Noturna:</b> <?= $questionario->enurese ? 'Sim' : 'Não' ?> <br>
+                    <b>Descontrole dos Esfíncteres</b> <?= $questionario->esfincteres ? 'Sim' : 'Não' ?> <br>
                     <br>
                 </div>
             </div>
@@ -212,7 +215,7 @@
             <div class="col-md-12">
                 <div class="controlcontainer lastcont"> 
                     <h4 class="exibetitulo">Alimentação</h4>  
-                    InfoBanco
+                    <?= $questionario->alimentacao ?>
                 </div>
             </div>
         </div> 
@@ -223,60 +226,60 @@
                 <div class="col-md-6">
 
                     <b>Lábio:</b><br>
-                    InfoBanco
+                    <?= $questionario->labio == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
                     
                     <b>Mucosa Jugal:</b><br>
-                    InfoBanco
+                    <?= $questionario->mucosa == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                     <b>Língua:</b><br>
-                    InfoBanco
+                    <?= $questionario->lingua == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                     <b>Soalho da Boca:</b><br>
-                    InfoBanco
+                    <?= $questionario->soalho == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                     <b>Paleto Duro:</b><br>
-                    InfoBanco
+                    <?= $questionario->palato_duro == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                     <b>Garganta:</b><br>
-                    InfoBanco
+                    <?= $questionario->garganta == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                     <b>Paleto Mole:</b><br>
-                    InfoBanco
+                    <?= $questionario->palato_mole == 1 ? 'Normal' : 'Alterado' ?>
                     <br>
 
                 </div>
                 <b>Mucosa Alveolar:</b><br>
-                InfoBanco
+                <?= $questionario->alveolar == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>Gengivas:</b><br>
-                InfoBanco
+                <?= $questionario->gengiva == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>Glândulas Salivares:</b><br>
-                InfoBanco
+                <?= $questionario->salivar == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>Linfonodos:</b><br>
-                InfoBanco
+                <?= $questionario->linfonodos == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>ATM:</b><br>
-                InfoBanco
+                <?= $questionario->atm == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>Músculos Mastigadores:</b><br>
-                InfoBanco
+                <?= $questionario->mastigadores == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
 
                 <b>Oclusão:</b><br>
-                InfoBanco
+                <?= $questionario->oclusao == 1 ? 'Normal' : 'Alterado' ?>
                 <br>
             </div>
         </div>
@@ -284,28 +287,28 @@
         <div class="col-md-6">
             <div class="controlcontainer lastcont">
                 <h4 class="exibetitulo">Desfecho de Consulta:</h4>
-                <b>Alterações Encontradas:</b>InfoBanco<br>
+                <b>Alterações Encontradas:</b><?= $questionario->alteracoes ?><br>
                 <br>
 
-                <b>Pressão Arterial Máxima:</b>InfoBanco <b>mmgH</b><br>
+                <b>Pressão Arterial Máxima:</b><?= $questionario->pamax ?> <b>mmgH</b><br>
                 <br>
 
-                <b>Pressão Arterial Mínima:</b>InfoBanco <b>mmgH</b><br>
+                <b>Pressão Arterial Mínima:</b><?= $questionario->pamin ?> <b>mmgH</b><br>
                 <br>
 
-                <b>Diagnóstico Presuntivo:</b>InfoBanco<br>
+                <b>Diagnóstico Presuntivo:</b><?= $questionario->presuntivo ?><br>
                 <br>
 
-                <b>Exames Complementares:</b>InfoBanco<br>
+                <b>Exames Complementares:</b><?= $questionario->complementares ?><br>
                 <br>
 
-                <b>Diagnóstico Definitivo:</b>InfoBanco<br>
+                <b>Diagnóstico Definitivo:</b><?= $questionario->definitivo ?><br>
                 <br>
 
-                <b>Tratamento/Proservação:</b>InfoBanco<br>
+                <b>Tratamento/Proservação:</b><?= $questionario->proservacao ?><br>
                 <br>
 
-                <b>Plano de Tratamento:</b>InfoBanco<br>
+                <b>Plano de Tratamento:</b><?= $questionario->plano ?><br>
                 <br>
             </div>
         </div>
@@ -313,11 +316,17 @@
         <div class="col-md-12">
             <div class="controlcontainer lastcont"> 
                 <h4 class="exibetitulo">Responsáveis do Tratamento</h4>
-                <b>Aluno:</b><br>        
-                InfoBanco
+                <b>Alunos (Conduta da Criança):</b><br>        
+                <?= $questionario->alunos ?>
                 <br>
-                <b>Professor:</b><br>
-                InfoBanco
+                <b>Professor (Conduta da Criança):</b><br>
+                <?= $questionario->professor ?>
+                <br>
+                <b>Alunos (Exame Físico):</b><br>        
+                <?= $questionario->alunos_exame ?>
+                <br>
+                <b>Professor (Exame Físico):</b><br>
+                <?= $questionario->professor_exame ?>
                 <br>
             </div>
         </div>

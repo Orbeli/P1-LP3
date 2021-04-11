@@ -13,7 +13,7 @@
 
 	$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
-	if( $acao == 'inserir') {
+	if ($acao == 'inserir') {
 		$paciente = new Paciente();
 		$paciente->__set('nome', $_POST['nome']);
 		$paciente->__set('data_nasc', $_POST['data_nasc']);
@@ -60,17 +60,22 @@
 			$enderecoService = new EnderecoService($conexao, $endereco);
 			$enderecoService->inserir();
 		}
-
 		header('Location: ../../');
 	}
-	// } else if($acao == 'recuperar'){
 
-	// 	$tarefa = new Tarefa();
-	// 	$conexao = new Conexao();
+	if ($acao == 'listar') {
+		$paciente = new Paciente();
+		$conexao = new Connection();
+		$pacienteService = new PacienteService($conexao, $paciente);
+		$pacientes = $pacienteService->recuperar();
+	}
 
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->recuperar();
-
+	if ($acao == 'recuperar') {
+		$paciente = new Paciente();
+		$conexao = new Connection();
+		$pacienteService = new PacienteService($conexao, $paciente);
+		$paciente = $pacienteService->getPaciente($_GET['paciente']);
+	}
 	// } else if($acao == 'atualizar'){
 
 	// 	$tarefa = new Tarefa();
@@ -88,44 +93,12 @@
 	// 		}
 	// 	}
 	
-	// } else if($acao == 'remover'){
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id', $_GET['id']);
+	if($acao == 'remover') {
+		$paciente = new Paciente();
+		$conexao = new Connection();
+		$pacienteService = new PacienteService($conexao, $paciente);
+		$paciente = $pacienteService->removePaciente($_GET['paciente']);
 
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->remover();
-
-	// 		if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-	// 			header('Location: index.php');	
-	// 		} else {
-	// 			header('Location: todas_tarefas.php');
-	// 		}
-	
-	// }else if($acao == 'marcarRealizada'){
-
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id', $_GET['id'])->__set('id_status', 2);	
-		
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->marcarRealizada();
-
-	// 	if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-	// 		header('Location: index.php');	
-	// 	} else {
-	// 		header('Location: todas_tarefas.php');
-	// 	}
-	
-	// }else if ($acao = 'recuperarTarefasPendentes'){
-
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id_status',1);
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->recuperarTarefasPendentes();
-	// }
+		header('Location: ../../Public/views/exibicad.php');
+	}
 ?>

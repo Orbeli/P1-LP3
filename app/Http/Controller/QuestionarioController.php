@@ -216,4 +216,11 @@
 
 		header('Location: ../../');
 	}
+
+	if ($acao == 'recuperar') {
+		$questionario = new Questionario();
+		$conexao = new Connection();
+		$questionarioService = new QuestionarioService($conexao, $questionario);
+		$questionario = $questionarioService->getQuestionario($_GET['paciente']);
+	}
 ?>

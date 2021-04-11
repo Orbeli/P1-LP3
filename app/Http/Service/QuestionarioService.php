@@ -78,6 +78,31 @@ class QuestionarioService {
 
 		return False;
 	}
+
+	public function getQuestionario($id) { //read;
+		$query = '
+			SELECT * FROM questionario
+			INNER JOIN paciente ON
+				paciente.id = questionario.paciente_id
+			INNER JOIN questionario_infantil ON
+				questionario.id = questionario_infantil.questionario_id
+			INNER JOIN conduta_crianca ON
+				questionario.id = conduta_crianca.questionario_id
+			INNER JOIN exame_fisico ON
+				questionario.id = exame_fisico.questionario_id WHERE paciente.id = :id
+		';
+
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+
+		// Se encontrou o questionario
+		if($stmt->rowCount() > 0) {
+			return $stmt->fetch(PDO::FETCH_OBJ);
+		}
+
+		header('Location: ../../');
+	}
 }
 
 ?>
