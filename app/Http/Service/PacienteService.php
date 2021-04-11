@@ -83,6 +83,15 @@ class PacienteService {
 
 		header('Location: ../../');
 	}
+
+	public function removePaciente($id) { //delete
+		$query = 'DELETE FROM paciente where id = :id';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+
+		header('Location: ../../Public/views/exibicad.php');
+	}
 	// public function atualizar() { //update
 		
 	// 	$query = "update tb_tarefas set tarefa = ? where id = ?";

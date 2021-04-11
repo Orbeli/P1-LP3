@@ -2,9 +2,6 @@
     $acao = 'recuperar';
     require '../../Http/Controller/QuestionarioController.php';
     require_once 'layouts/base.php';
-    // echo '<pre>';
-    // print_r($questionario);
-
 ?>
 
 <!-- Content Section -->
