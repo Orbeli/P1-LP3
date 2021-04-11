@@ -29,7 +29,7 @@
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="">
+                            <a class="btnacao" href="/public/views/prontuarioatendimento.php">
                                 <i class="fas fa-notes-medical"></i>  
                                 <span class="sr-only">(current)</span>
                             </a>
