@@ -2,17 +2,23 @@
 
 	// namespace Http\Controller;
 	require "../../Http/Model/Questionario.php";
-	// require "../../Http/Model/Filiacao.php";
-	// require "../../Http/Model/Endereco.php";
+	require "../../Http/Model/QuestionarioCrianca.php";
+	require "../../Http/Model/CondutaCrianca.php";
+	require "../../Http/Model/ExameFisico.php";
 
 	require "../../Http/Service/QuestionarioService.php";
-	// require "../../Http/Service/FiliacaoService.php";
-	// require "../../Http/Service/EnderecoService.php";
+	require "../../Http/Service/QuestionarioCriancaService.php";
+	require "../../Http/Service/CondutaCriancaService.php";
+	require "../../Http/Service/ExameFisicoService.php";
 
 	require "../../Infrastructure/Database/Connection.php";
 
     function checkInput($var) {
-        $_POST[$var] = $_POST[$var] == 'Sim' ? $_POST[$var] = 1 : $_POST[$var] = 0;
+		if($_POST[$var] == 'Sim' || isset($_POST[$var])) {
+			$_POST[$var] = 1;
+		} else {
+			$_POST[$var] = 0;
+		}
 
         return $_POST[$var];
     }
@@ -83,34 +89,129 @@
 
 		// Se inserir o Questionario, insere os dados complementares
 		if ($questionarioService->inserir()) {
-            // exit("inseriu questionario");
-			// // Insere filiacao do paciente
-			// $filiacao = new Filiacao();
-			// $filiacao->__set('nome_mae', $_POST['nome_mae']);
-			// $filiacao->__set('nome_pai', $_POST['nome_pai']);
-			// $filiacao->__set('nacionalidade_mae', $_POST['nacionalidade_mae']);
-			// $filiacao->__set('nacionalidade_pai', $_POST['nacionalidade_pai']);
-			// $filiacao->__set('paciente_id', $paciente->__get('id'));
+			// Insere o questionario infantil
+			$vars = array(
+				'problemas_parto',
+				'anestesia',
+				'doencao_contagiosa',
+				'vacinada',
+			);
+			defineTrueFalse($vars);
 
-			// $filiacaoService = new FiliacaoService($conexao, $filiacao);
-			// $filiacaoService->inserir();
+			// Insere questionario da crianca
+			$questionarioCrianca = new QuestionarioCrianca();
+			$questionarioCrianca->__set('gestacional', $_POST['gestacional']);
+			$questionarioCrianca->__set('parto', $_POST['parto']);
+			$questionarioCrianca->__set('problemas_parto', $_POST['problemas_parto']);
+			$questionarioCrianca->__set('tipo_amamentacao', $_POST['tipo_amamentacao']);
+			$questionarioCrianca->__set('idade_amamentacao', $_POST['idade_amamentacao']);
+			$questionarioCrianca->__set('anestesia', $_POST['anestesia']);
+			$questionarioCrianca->__set('doencao_contagiosa', $_POST['doencao_contagiosa']);
+			$questionarioCrianca->__set('vacinada', $_POST['vacinada']);
+			$questionarioCrianca->__set('questionario_id', $questionario->__get('id'));
 
-			// // Insere endereco do paciente
-			// $endereco = new Endereco();
-			// $endereco->__set('rua', $_POST['rua']);
-			// $endereco->__set('CEP', $_POST['CEP']);
-			// $endereco->__set('numero', $_POST['numero_endereco']);
-			// $endereco->__set('complemento', $_POST['complemento']);
-			// $endereco->__set('bairro', $_POST['bairro']);
-			// $endereco->__set('estado', $_POST['estado_endereco']);
-			// $endereco->__set('cidade', $_POST['cidade_endereco']);
-			// $endereco->__set('contato', $_POST['contato']);
-			// $endereco->__set('paciente_id', $paciente->__get('id'));
+			$questionarioCriancaService = new QuestionarioCriancaService($conexao, $questionarioCrianca);
+			$questionarioCriancaService->inserir();
 
-			// $enderecoService = new EnderecoService($conexao, $endereco);
-			// $enderecoService->inserir();
+			$vars = array(
+				'sentou',
+				'engatinhou',
+				'andou',
+				'falou',
+				'dificuldade_aprendizado',
+				'postura_normal',
+				'fala_normal',
+				'paralisia',
+				'enurese',
+				'esfincteres',
+				'tique',
+				'fobia',
+				'ansiedade',
+				'medo',
+				'birra',
+				'ciume',
+			);
+			defineTrueFalse($vars);
 
-            header('Location: ../../');
+			// Insere conduta da crianca
+			$condutaCrianca = new CondutaCrianca();
+			$condutaCrianca->__set('sentou', $_POST['sentou']);
+			$condutaCrianca->__set('engatinhou', $_POST['engatinhou']);
+			$condutaCrianca->__set('andou', $_POST['andou']);
+			$condutaCrianca->__set('falou', $_POST['falou']);
+			$condutaCrianca->__set('dificuldade_aprendizado', $_POST['dificuldade_aprendizado']);
+			$condutaCrianca->__set('humor', $_POST['humor']);
+			$condutaCrianca->__set('sono', $_POST['sono']);
+			$condutaCrianca->__set('postura_normal', $_POST['postura_normal']);
+			$condutaCrianca->__set('fala_normal', $_POST['fala_normal']);
+			$condutaCrianca->__set('paralisia', $_POST['paralisia']);
+			$condutaCrianca->__set('enurese', $_POST['enurese']);
+			$condutaCrianca->__set('esfincteres', $_POST['esfincteres']);
+			$condutaCrianca->__set('alimentacao', $_POST['alimentacao']);
+			$condutaCrianca->__set('sociabilidade', $_POST['sociabilidade']);
+			$condutaCrianca->__set('tique', $_POST['tique']);
+			$condutaCrianca->__set('fobia', $_POST['fobia']);
+			$condutaCrianca->__set('ansiedade', $_POST['ansiedade']);
+			$condutaCrianca->__set('medo', $_POST['medo']);
+			$condutaCrianca->__set('birra', $_POST['birra']);
+			$condutaCrianca->__set('ciume', $_POST['ciume']);
+			$condutaCrianca->__set('observacoes', $_POST['observacoes']);
+			$condutaCrianca->__set('alunos', $_POST['alunos']);
+			$condutaCrianca->__set('professor', $_POST['professor']);
+			$condutaCrianca->__set('questionario_id', $questionario->__get('id'));
+
+			$condutaCriancaService = new CondutaCriancaService($conexao, $condutaCrianca);
+			$condutaCriancaService->inserir();
+
+
+			$vars = array(
+				'labio',
+				'mucosa',
+				'lingua',
+				'soalho',
+				'palato_duro',
+				'garganta',
+				'palato_mole',
+				'alveolar',
+				'gengiva',
+				'salivar',
+				'linfonodos',
+				'atm',
+				'mastigadores',
+				'oclusao',
+			);
+			defineTrueFalse($vars);
+
+			// Insere exame fisico
+			$exameFisico = new ExameFisico();
+			$exameFisico->__set('labio', $_POST['labio']);
+			$exameFisico->__set('mucosa', $_POST['mucosa']);
+			$exameFisico->__set('lingua', $_POST['lingua']);
+			$exameFisico->__set('soalho', $_POST['soalho']);
+			$exameFisico->__set('palato_duro', $_POST['palato_duro']);
+			$exameFisico->__set('garganta', $_POST['garganta']);
+			$exameFisico->__set('palato_mole', $_POST['palato_mole']);
+			$exameFisico->__set('alveolar', $_POST['alveolar']);
+			$exameFisico->__set('gengiva', $_POST['gengiva']);
+			$exameFisico->__set('salivar', $_POST['salivar']);
+			$exameFisico->__set('linfonodos', $_POST['linfonodos']);
+			$exameFisico->__set('atm', $_POST['atm']);
+			$exameFisico->__set('mastigadores', $_POST['mastigadores']);
+			$exameFisico->__set('oclusao', $_POST['oclusao']);
+			$exameFisico->__set('alteracoes', $_POST['alteracoes']);
+			$exameFisico->__set('pamax', $_POST['pamax']);
+			$exameFisico->__set('pamin', $_POST['pamin']);
+			$exameFisico->__set('presuntivo', $_POST['presuntivo']);
+			$exameFisico->__set('complementares', $_POST['complementares']);
+			$exameFisico->__set('definitivo', $_POST['definitivo']);
+			$exameFisico->__set('proservacao', $_POST['proservacao']);
+			$exameFisico->__set('tratamento', $_POST['tratamento']);
+			$exameFisico->__set('alunos_exame', $_POST['alunos_exame']);
+			$exameFisico->__set('professor_exame', $_POST['professor_exame']);
+			$exameFisico->__set('questionario_id', $questionario->__get('id'));
+
+			$exameFisicoService = new ExameFisicoService($conexao, $exameFisico);
+			$exameFisicoService->inserir();
 		}
 
 		header('Location: ../../');

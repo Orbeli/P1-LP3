@@ -110,7 +110,7 @@
                 </div>
                 </div>
                 </ol>
-                </div>    
+                </div>
                 <div class="col-12">
                 <div>
                 <label><h4>13 -	Você e/ou algum familiar  teve algumas dessas doenças</h4></label>
@@ -192,13 +192,13 @@
                 <input type="radio" name="parto" value="Cesariana"> Cesariana   
                 <br>
                 <label>Problemas Durante o Parto?</label>
-                <input type="radio" name="probpart" value="Sim"> Sim
-                <input type="radio" name="probpart" value="Não"> Não    
+                <input type="radio" name="problemas_parto" value="Sim"> Sim
+                <input type="radio" name="problemas_parto" value="Não"> Não    
                 <br>
                 <label>A amamentação foi:</label>
-                <input type="radio" name="amament" value="Natural"> Natural
-                <input type="radio" name="amament" value="Mamadeira"> Mamadeira 
-                <label>até a idade de:<input type="text" id="amament" name="amament" /></label>
+                <input type="radio" name="tipo_amamentacao" value="Natural"> Natural
+                <input type="radio" name="tipo_amamentacao" value="Mamadeira"> Mamadeira 
+                <label>até a idade de:<input type="text" id="amament" name="idade_amamentacao" /></label>
                 <br>
                 <label>Já lhe foi dito para não tomar anestesia local?      
                 <input type="radio" name="anestesia" value="Sim"> Sim
@@ -206,28 +206,28 @@
                 </label>
                 <br>
                 <label>Já teve ou viveu com alguém que tivesse doença grave e contagiosa?      
-                <input type="radio" name="contagio" value="Sim"> Sim
-                <input type="radio" name="contagio" value="Não"> Não 
+                <input type="radio" name="doencao_contagiosa" value="Sim"> Sim
+                <input type="radio" name="doencao_contagiosa" value="Não"> Não 
                 </label>
                 <br>
                 <label>A criança já foi vacinada?    
-                <input type="radio" name="vacina" value="Sim"> Sim
-                <input type="radio" name="vacina" value="Não"> Não 
+                <input type="radio" name="vacinada" value="Sim"> Sim
+                <input type="radio" name="vacinada" value="Não"> Não 
                 </label>
             </div>
             <div class="pretty">
                 <h2>Conduta da Criança</h2>
                 <br>
                 <label>Durante os primeiros 2 anos de vida a criança: <br>
-                Sentou-se<input type="checkbox" name="sit" /><br>
-                Engatinhou<input type="checkbox" name="engat" /><br>
-                Andou<input type="checkbox" name="walk" /><br>
-                Falou<input type="checkbox" name="speak" /><br>
+                Sentou-se<input type="checkbox" name="sentou" /><br>
+                Engatinhou<input type="checkbox" name="engatinhou" /><br>
+                Andou<input type="checkbox" name="andou" /><br>
+                Falou<input type="checkbox" name="falou" /><br>
                 </label>
                 <br>
                 <label>No lar e na escola a criança apresentou alguma dificuldade no aprendizado?  
-                <input type="radio" name="learn" value="Sim"> Sim
-                <input type="radio" name="learn" value="Não"> Não 
+                <input type="radio" name="dificuldade_aprendizado" value="Sim"> Sim
+                <input type="radio" name="dificuldade_aprendizado" value="Não"> Não 
                 </label>
                 <br>
                 <label>Estado Anímico: 
@@ -252,17 +252,17 @@
                     <label>
                         Conduta Psicomotora:
                         <div>
-                            <input type="radio" name="postura" value="PosturaNormal"> Postura normal
-                            <input type="radio" name="postura" value="PosturaAlterada"> Postura alterada
+                            <input type="radio" name="postura_normal" value="Sim"> Postura normal
+                            <input type="radio" name="postura_normal" value="Não"> Postura alterada
                         </div>
                         <div>
-                            <input type="radio" name="fala" value="FonacaoNormal"> Fonação normal 
-                            <input type="radio" name="fala" value="DisturbiodaFala"> Distúrbios da fala  
+                            <input type="radio" name="fala_normal" value="Sim"> Fonação normal 
+                            <input type="radio" name="fala_normal" value="Não"> Distúrbios da fala  
                         </div>
                         <div>
                             <input type="checkbox" name="paralisia" value="AlgParalisia"> Alguma paralisia
-                            <input type="checkbox" name="enurese " value="Enurese"> Enurese noturna
-                            <input type="checkbox" name="descontrole" value="Descontrole"> Descontrole dos esfíncteres
+                            <input type="checkbox" name="enurese" value="Enurese"> Enurese noturna
+                            <input type="checkbox" name="esfincteres" value="Descontrole"> Descontrole dos esfíncteres
                         </div>
                     </label>
                 </div>
@@ -270,20 +270,20 @@
                     <label>
                         Alimentação:
                         <div>
-                            <input type="radio" name="alimenta" value="Rejeita"> Rejeita 
+                            <input type="radio" name="alimentacao" value="Rejeita"> Rejeita 
                         </div>
                         <div>
-                            <input type="radio" name="alimenta" value="AlimentaNormalmente"> Alimenta-se normalmente
+                            <input type="radio" name="alimentacao" value="AlimentaNormalmente"> Alimenta-se normalmente
                         </div>
                         <div>
-                            <input type="radio" name="alimenta" value="SupraAlimenta"> Supra alimenta-se
+                            <input type="radio" name="alimentacao" value="SupraAlimenta"> Supra alimenta-se
                         </div>
                     </label>
                 </div>
                 <label>Sociabilidade:
-                <input type="radio" name="social" value="Isolada"> Isolada 
-                <input type="radio" name="social" value="Agressiva"> Agressiva   
-                <input type="radio" name="social" value="RelNormais"> Relações Normais               
+                <input type="radio" name="sociabilidade" value="Isolada"> Isolada 
+                <input type="radio" name="sociabilidade" value="Agressiva"> Agressiva   
+                <input type="radio" name="sociabilidade" value="RelNormais"> Relações Normais               
                 </label>
                 <br><br>
                 <div>
@@ -316,9 +316,9 @@
                     </label>
                 </div>
                 <br><br>
-                <label>Observações:<input type="text" id="OBS" name="OBS" /></label><br>
+                <label>Observações:<input type="text" id="observacoes" name="observacoes" /></label><br>
                 <br><br><br>
-                <label>Aluno(s)<input type="text" id="aluno" name="aluno"/></label><label>Professor Responsável:<input type="text" id="professor" name="professor"/></label><br>
+                <label>Aluno(s)<input type="text" id="aluno" name="alunos"/></label><label>Professor Responsável:<input type="text" id="professor" name="professor"/></label><br>
             </div>
             <div class="col-12">
                 <div>
@@ -329,50 +329,50 @@
                             <div>
                     <label>Lábio</label>
                     <div>
-                    <input type="radio" name="labio" value="Normal"> Normal                    
+                    <input type="radio" name="labio" value="Sim"> Normal                    
                     <input type="radio" name="labio" value="Alterado"> Alterado
                     </div>                
                     </div>  
                     <div>
                     <label>Mucosa Jugal</label>
                     <div>
-                    <input type="radio" name="mucosa" value="Normal"> Normal
-                    <input type="radio" name="mucosa" value="Alterado"> Alterado
+                    <input type="radio" name="mucosa" value="Sim"> Normal
+                    <input type="radio" name="mucosa" value="Não"> Alterado
                     </div>
                     </div>              
                     <div>
                     <label>Língua</label>
                     <div>
-                    <input type="radio" name="lingua" value="Normal"> Normal
-                    <input type="radio" name="lingua" value="Alterado"> Alterado
+                    <input type="radio" name="lingua" value="Sim"> Normal
+                    <input type="radio" name="lingua" value="Não"> Alterado
                     </div>
                     </div>              
                     <div>
                     <label>Soalho da boca</label>
                     <div>
-                    <input type="radio" name="soalho" value="Normal"> Normal
-                    <input type="radio" name="soalho" value="Alterado"> Alterado
+                    <input type="radio" name="soalho" value="Sim"> Normal
+                    <input type="radio" name="soalho" value="Não"> Alterado
                     </div>
                     </div>              
                     <div>
                     <label>Palato Duro</label>
                     <div>
-                    <input type="radio" name="pld" value="Normal"> Normal
-                    <input type="radio" name="pld" value="Alterado"> Alterado
+                    <input type="radio" name="palato_duro" value="Sim"> Normal
+                    <input type="radio" name="palato_duro" value="Não"> Alterado
                     </div>
                     </div>              
                     <div>
                     <label>Garganta</label>
                     <div>
-                    <input type="radio" name="garganta" value="Normal"> Normal
-                    <input type="radio" name="garganta" value="Alterado"> Alterado
+                    <input type="radio" name="garganta" value="Sim"> Normal
+                    <input type="radio" name="garganta" value="Não"> Alterado
                     </div>
                     </div>                         
                     <div>
                     <label>Palato Mole</label>
                     <div>
-                    <input type="radio" name="plm" value="Normal"> Normal
-                    <input type="radio" name="plm" value="Alterado"> Alterado
+                    <input type="radio" name="palato_mole" value="Sim"> Normal
+                    <input type="radio" name="palato_mole" value="Não"> Alterado
                     </div>
                     </div>
                     </div>
@@ -380,50 +380,50 @@
                         <div>
                             <label>Mucosa Alveolar</label> 
                             <div>
-                                <input type="radio" name="alveolar" value="Normal"> Normal
-                                <input type="radio" name="alveolar" value="Alterado"> Alterado
+                                <input type="radio" name="alveolar" value="Sim"> Normal
+                                <input type="radio" name="alveolar" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>Gengivas</label>
                             <div>
-                                <input type="radio" name="gengiva" value="Normal"> Normal
-                                <input type="radio" name="gengiva" value="Alterado"> Alterado
+                                <input type="radio" name="gengiva" value="Sim"> Normal
+                                <input type="radio" name="gengiva" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>Glândulas Salivares</label>
                             <div>
-                                <input type="radio" name="salivar" value="Normal"> Normal
-                                <input type="radio" name="salivar" value="Alterado"> Alterado
+                                <input type="radio" name="salivar" value="Sim"> Normal
+                                <input type="radio" name="salivar" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>Linfonodos</label>
                             <div>
-                                <input type="radio" name="linfo" value="Normal"> Normal
-                                <input type="radio" name="linfo" value="Alterado"> Alterado
+                                <input type="radio" name="linfonodos" value="Sim"> Normal
+                                <input type="radio" name="linfonodos" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>ATM</label>
                             <div>
-                                <input type="radio" name="atm" value="Normal"> Normal
-                                <input type="radio" name="atm" value="Alterado"> Alterado
+                                <input type="radio" name="atm" value="Sim"> Normal
+                                <input type="radio" name="atm" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>Músculos Mastigadores</label>
                             <div>
-                                <input type="radio" name="mastiga" value="Normal"> Normal
-                                <input type="radio" name="mastiga" value="Alterado"> Alterado
+                                <input type="radio" name="mastigadores" value="Sim"> Normal
+                                <input type="radio" name="mastigadores" value="Não"> Alterado
                             </div>
                         </div>
                         <div>
                             <label>Oclusão</label>
                             <div>
-                                <input type="radio" name="oclusa" value="Normal"> Normal
-                                <input type="radio" name="oclusa" value="Alterado"> Alterado
+                                <input type="radio" name="oclusao" value="Sim"> Normal
+                                <input type="radio" name="oclusao" value="Não"> Alterado
                             </div>
                         </div>
                     </div>
@@ -431,35 +431,35 @@
                         <div class="centralizar pretty">
                             <label>
                                 <div>
-                                    Alterações Encontradas:<input  type="text" id="altera" name="altera"/>
+                                    Alterações Encontradas:<input  type="text" id="altera" name="alteracoes"/>
                                 </div>
                                 <div>
-                                    Pressão Arterial Máxima:<input  type="text" id="hamax" name="hamax" placeholder="em mmgH"/>
+                                    Pressão Arterial Máxima:<input  type="text" id="pamax" name="pamax" placeholder="em mmgH"/>
                                 </div>
                                 <div>
-                                    Pressão Arterial Mínima:<input  type="text" id="hamin" name="hamin" placeholder="em mmgH"/>
+                                    Pressão Arterial Mínima:<input  type="text" id="pamin" name="pamin" placeholder="em mmgH"/>
                                 </div>
                                 <div>
-                                    Diagnóstico Presuntivo:<input  type="text" id="diagpre" name="diagpre"/>
+                                    Diagnóstico Presuntivo:<input  type="text" id="presuntivo" name="presuntivo"/>
                                 </div>
                                 <div>
-                                    Exames Complementares:<input  type="text" id="exmcomple" name="exmcomple"/>
+                                    Exames Complementares:<input  type="text" id="complementares" name="complementares"/>
                                 </div>
                                 <div>
-                                    Diagnóstico Definitivo:<input  type="text" id="diagdef" name="diagdef"/>
+                                    Diagnóstico Definitivo:<input  type="text" id="definitivo" name="definitivo"/>
                                 </div>
                                 <div>
-                                    Tratamento/Proservação:<input  type="text" id="tratpro" name="tratpro"/>
+                                    Tratamento/Proservação:<input  type="text" id="proservacao" name="proservacao"/>
                                 </div>
                                 <div>
-                                    Plano de Tratamento:<input  type="text" id="tratplan" name="tratplan"/>
+                                    Plano de Tratamento:<input  type="text" id="tratamento" name="tratamento"/>
                                 </div>
                             </label>
                         </div>
                     </div>
                 </div>
                 </label>
-                <label>Aluno(s)<input  type="text" id="alunlid" name="alunlid"/></label><label>Professor Responsável:<input  type="text" id="proflider" name="proflider"/></label><br>
+                <label>Aluno(s)<input  type="text" id="alunos_exame" name="alunos_exame"/></label><label>Professor Responsável:<input  type="text" id="professor_exame" name="professor_exame"/></label><br>
                 <!-- botão submit-->
                 <div>
                     <input class="submit" type="submit" value="Salvar Informações">

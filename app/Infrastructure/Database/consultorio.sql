@@ -71,6 +71,79 @@ CREATE TABLE questionario (
   FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
 );
 
+CREATE TABLE questionario_infantil (
+  id SERIAL PRIMARY KEY,
+  gestacional VARCHAR(255),
+  parto VARCHAR(30),
+  problemas_parto BOOLEAN,
+  tipo_amamentacao VARCHAR(20),
+  idade_amamentacao VARCHAR(3),
+  anestesia BOOLEAN,
+  doencao_contagiosa BOOLEAN,
+  vacinada BOOLEAN,
+  questionario_id INTEGER,
+  FOREIGN KEY (questionario_id) REFERENCES questionario(id) ON DELETE CASCADE
+);
+
+CREATE TABLE conduta_crianca (
+  id SERIAL PRIMARY KEY,
+  sentou BOOLEAN,
+  engatinhou BOOLEAN,
+  andou BOOLEAN,
+  falou BOOLEAN,
+  dificuldade_aprendizado BOOLEAN,
+  humor VARCHAR(30),
+  sono VARCHAR(30),
+  postura_normal BOOLEAN,
+  fala_normal BOOLEAN,
+  paralisia BOOLEAN,
+  enurese BOOLEAN,
+  esfincteres BOOLEAN,
+  alimentacao VARCHAR(30),
+  sociabilidade VARCHAR(30),
+  tique BOOLEAN,
+  fobia BOOLEAN,
+  ansiedade BOOLEAN,
+  medo BOOLEAN,
+  birra BOOLEAN,
+  ciume BOOLEAN,
+  observacoes VARCHAR(255),
+  alunos VARCHAR(255),
+  professor VARCHAR(60),
+  questionario_id INTEGER,
+  FOREIGN KEY (questionario_id) REFERENCES questionario(id) ON DELETE CASCADE
+);
+
+CREATE TABLE exame_fisico (
+  id SERIAL PRIMARY KEY,
+  labio BOOLEAN,
+  mucosa BOOLEAN,
+  lingua BOOLEAN,
+  soalho BOOLEAN,
+  palato_duro BOOLEAN,
+  garganta BOOLEAN,
+  palato_mole BOOLEAN,
+  alveolar BOOLEAN,
+  gengiva BOOLEAN,
+  salivar BOOLEAN,
+  linfonodos BOOLEAN,
+  atm BOOLEAN,
+  mastigadores BOOLEAN,
+  oclusao BOOLEAN,
+  alteracoes VARCHAR(255),
+  pamax VARCHAR(10),
+  pamin VARCHAR(10),
+  presuntivo VARCHAR(255),
+  complementares VARCHAR(70),
+  definitivo VARCHAR(35),
+  proservacao VARCHAR(255),
+  tratamento VARCHAR(255),
+  alunos_exame VARCHAR(100),
+  professor_exame VARCHAR(60),
+  questionario_id INTEGER,
+  FOREIGN KEY (questionario_id) REFERENCES questionario(id) ON DELETE CASCADE
+);
+
 SELECT * FROM paciente
 INNER JOIN filiacao ON
   paciente.id = filiacao.paciente_id;
