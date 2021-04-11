@@ -11,18 +11,7 @@
                     <h4 class="exibetitulo">
                         Ficha de Saúde
                     </h4>
-                    <label class="exibetitulo">Nome
-                    <input
-                    class="text"
-                    type="text"
-                    id="User"
-                    name="Name"
-                    placeholder="Seu nome..."/>
-                    </label>
-
-                    <input 
-                    class="text"
-                    type="date">
+                                       
                     <label>Cadastro
                     <input
                     class="text"
@@ -553,51 +542,19 @@
                             <input type="radio" name="atm" value="Sim"> Normal
                             <input type="radio" name="atm" value="Não"> Alterado
                         </div>
-<<<<<<< HEAD
-                        
+
                         <label>Músculos Mastigadores</label>
                         <div>
                             <input type="radio" name="mastigadores" value="Sim"> Normal
                             <input type="radio" name="mastigadores" value="Não"> Alterado
-=======
-                    </div>
-                    <div>
-                        <div class="centralizar pretty">
-                            <label>
-                                <div>
-                                    Alterações Encontradas:<input  type="text" id="altera" name="alteracoes"/>
-                                </div>
-                                <div>
-                                    Pressão Arterial Máxima:<input  type="text" id="pamax" name="pamax" placeholder="em mmgH"/>
-                                </div>
-                                <div>
-                                    Pressão Arterial Mínima:<input  type="text" id="pamin" name="pamin" placeholder="em mmgH"/>
-                                </div>
-                                <div>
-                                    Diagnóstico Presuntivo:<input  type="text" id="presuntivo" name="presuntivo"/>
-                                </div>
-                                <div>
-                                    Exames Complementares:<input  type="text" id="complementares" name="complementares"/>
-                                </div>
-                                <div>
-                                    Diagnóstico Definitivo:<input  type="text" id="definitivo" name="definitivo"/>
-                                </div>
-                                <div>
-                                    Tratamento/Proservação:<input  type="text" id="proservacao" name="proservacao"/>
-                                </div>
-                                <div>
-                                    Plano de Tratamento:<input  type="text" id="plano" name="plano"/>
-                                </div>
-                            </label>
->>>>>>> c4c88540087df004ca1e4c0d522e8a48bb0f0df5
                         </div>
-                        
+                    </div>
+                    <div>                        
                         <label>Oclusão</label>
                         <div>
                             <input type="radio" name="oclusao" value="Sim"> Normal
                             <input type="radio" name="oclusao" value="Não"> Alterado
-                        </div>
-                        
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -635,7 +592,7 @@
                         </div>
 
                         <div>
-                            Plano de Tratamento:<input  type="text" id="tratamento" name="tratamento"/>
+                            Plano de Tratamento:<input  type="text" id="plano" name="plano"/>
                         </div>
                     </label>
                 </div>

@@ -205,7 +205,7 @@
 			$exameFisico->__set('complementares', $_POST['complementares']);
 			$exameFisico->__set('definitivo', $_POST['definitivo']);
 			$exameFisico->__set('proservacao', $_POST['proservacao']);
-			$exameFisico->__set('tratamento', $_POST['tratamento']);
+			$exameFisico->__set('plano', $_POST['plano']);
 			$exameFisico->__set('alunos_exame', $_POST['alunos_exame']);
 			$exameFisico->__set('professor_exame', $_POST['professor_exame']);
 			$exameFisico->__set('questionario_id', $questionario->__get('id'));
