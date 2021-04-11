@@ -14,7 +14,7 @@
 	require "../../Infrastructure/Database/Connection.php";
 
     function checkInput($var) {
-		if($_POST[$var] == 'Sim' || isset($_POST[$var])) {
+		if($_POST[$var] == 'Sim') {
 			$_POST[$var] = 1;
 		} else {
 			$_POST[$var] = 0;
@@ -34,6 +34,7 @@
 	if( $acao == 'inserir') {
 		$questionario = new Questionario();
         // define valores 1(true) ou 0(false) para os campos abaixo
+		
         $vars = array(
             "hemorragia",
             "alergia",

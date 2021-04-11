@@ -310,10 +310,10 @@
                     </h4>
                     <div>
                         <label>Durante os primeiros 2 anos de vida a criança: 
-                        Sentou-se<input type="checkbox" name="sentou" />
-                        Engatinhou<input type="checkbox" name="engatinhou" />
-                        Andou<input type="checkbox" name="andou" />
-                        Falou<input type="checkbox" name="falou" />
+                        Sentou-se<input type="checkbox" name="sentou" value="Sim" />
+                        Engatinhou<input type="checkbox" name="engatinhou" value="Sim" />
+                        Andou<input type="checkbox" name="andou" value="Sim" />
+                        Falou<input type="checkbox" name="falou" value="Sim" />
                         </label>
                     </div>
                     
@@ -365,9 +365,9 @@
                     </div>
 
                     <div>
-                        <input type="checkbox" name="paralisia" value="AlgParalisia"> Alguma paralisia
-                        <input type="checkbox" name="enurese" value="Enurese"> Enurese noturna
-                        <input type="checkbox" name="esfincteres" value="Descontrole"> Descontrole dos esfíncteres
+                        <input type="checkbox" name="paralisia" value="Sim"> Alguma paralisia
+                        <input type="checkbox" name="enurese" value="Sim"> Enurese noturna
+                        <input type="checkbox" name="esfincteres" value="Sim"> Descontrole dos esfíncteres
                     </div>
                     </label>
                 </div>
@@ -423,27 +423,27 @@
                     </h4>
                     <label>
                     <div>
-                        Tiques<input type="checkbox" name="tique" />
+                        Tiques<input type="checkbox" name="tique" value="Sim" />
                     </div>
 
                     <div>
-                        Fobias<input type="checkbox" name="fobia" />
+                        Fobias<input type="checkbox" name="fobia" value="Sim" />
                     </div>
 
                     <div>
-                        Ansiedade<input type="checkbox" name="ansiedade" />
+                        Ansiedade<input type="checkbox" name="ansiedade" value="Sim" />
                     </div>
 
                     <div>
-                        Medo<input type="checkbox" name="medo" />
+                        Medo<input type="checkbox" name="medo" value="Sim" />
                     </div>
 
                     <div>
-                        Birra<input type="checkbox" name="birra" />
+                        Birra<input type="checkbox" name="birra" value="Sim" />
                     </div>    
 
                     <div>
-                        Ciúmes<input type="checkbox" name="ciume" />
+                        Ciúmes<input type="checkbox" name="ciume" value="Sim" />
                     </div>
                     </label>                    
                 </div>
