@@ -3,25 +3,25 @@
 <!-- Content Section -->
 <div class="content col-md-12">
     
-    <form method="post" action="/Http/Controller/ProntuarioController.php?acao=inserir&paciente_id=<?= $_GET['paciente']?>">
+    <form action="post">
         <div class="containerpront">
 
             <h4 class="exibetitulo">Prontuario de Atendimento<h4>
             <label class="textformat">Data da consulta:</label><br>
             <input 
-                class="caixatexto"
+                class="caixatexto" 
                 type="date"
-                name="dia"
-                id="dia"/>
+                name="data_consulta"
+                id="data_consulta"/>
                 <br><br>
 
             <label class="textformat">Digite os procedimentos realizados:</label><br>
-            <textarea class="estilotxtarea" id="procedimentos" name="procedimentos"></textarea>
-            <div>
-                <input class="submit" type="submit">
-            </div>
+            <textarea class="estilotxtarea" id="atend_consulta" name="atend_consulta">
+            
+            </textarea>
         </div>
-    </form>
+    </form>        
+
 </div>
 
 <!-- Includes footer and close html -->

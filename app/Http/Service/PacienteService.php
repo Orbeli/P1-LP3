@@ -92,12 +92,13 @@ class PacienteService {
 	// 	return $stmt->execute();
 	// }
 
-	public function removePaciente($id) { //delete
-		$query = 'DELETE FROM paciente where id = :id';
-		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(':id', $id);
-		$stmt->execute();
-	}
+	// public function remover() { //delete
+
+	// 	$query = 'delete from tb_tarefas where id = :id';
+	// 	$stmt = $this->conexao->prepare($query);
+	// 	$stmt->bindValue(':id',$this->tarefa->__get('id'));
+	// 	$stmt->execute();
+	// }
 
 	// public function marcarRealizada() { 
 		

@@ -42,7 +42,7 @@
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="/public/views/userdetails.php?acao=remover&paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="">
                                 <i class="fas fa-trash-alt"></i> 
                                 <span class="sr-only">(current)</span>
                             </a>
