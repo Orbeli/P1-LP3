@@ -144,6 +144,14 @@ CREATE TABLE exame_fisico (
   FOREIGN KEY (questionario_id) REFERENCES questionario(id) ON DELETE CASCADE
 );
 
+CREATE TABLE prontuario (
+  id SERIAL PRIMARY KEY,
+  dia DATE,
+  procedimentos VARCHAR(255),
+  paciente_id INTEGER,
+  FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
+);
+
 SELECT * FROM paciente
 INNER JOIN filiacao ON
   paciente.id = filiacao.paciente_id;

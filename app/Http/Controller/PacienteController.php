@@ -93,44 +93,12 @@
 	// 		}
 	// 	}
 	
-	// } else if($acao == 'remover'){
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id', $_GET['id']);
+	if($acao == 'remover') {
+		$paciente = new Paciente();
+		$conexao = new Connection();
+		$pacienteService = new PacienteService($conexao, $paciente);
+		$paciente = $pacienteService->removePaciente($_GET['paciente']);
 
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->remover();
-
-	// 		if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-	// 			header('Location: index.php');	
-	// 		} else {
-	// 			header('Location: todas_tarefas.php');
-	// 		}
-	
-	// }else if($acao == 'marcarRealizada'){
-
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id', $_GET['id'])->__set('id_status', 2);	
-		
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->marcarRealizada();
-
-	// 	if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-	// 		header('Location: index.php');	
-	// 	} else {
-	// 		header('Location: todas_tarefas.php');
-	// 	}
-	
-	// }else if ($acao = 'recuperarTarefasPendentes'){
-
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id_status',1);
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new TarefaService($conexao, $tarefa);
-	// 	$tarefas = $tarefaService->recuperarTarefasPendentes();
-	// }
+		header('Location: ../../Public/views/exibicad.php');
+	}
 ?>
