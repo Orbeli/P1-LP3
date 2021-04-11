@@ -4,6 +4,7 @@
 <div class="content col-md-12">
     <h1><a class="nav-link" href="public/views/fichacadastral.php">Ficha Cadastral<span class="sr-only">(current)</span></a></h1>
     <h1><a class="nav-link" href="public/views/questgrowkid.php">Questionário<span class="sr-only">(current)</span></a></h1>
+    <h1><a class="nav-link" href="public/views/exibicad.php">Exibir Cadastros<span class="sr-only">(current)</span></a></h1>
     <form method="post" action="/Http/Controller/PacienteController.php?acao=inserir">
         <div class="form-group">
             <label>Descrição da tarefa:</label>

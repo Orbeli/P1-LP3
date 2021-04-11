@@ -180,3 +180,44 @@ h4{
 
 /* Fim de CSS formulario adulto e crianca*/
 
+/*inicio css tabela de exibição de usuarios*/
+
+.tabusers {
+    margin: 30px 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btnacao {
+    display: inline-block;
+    padding-right: 5px;
+}
+/*fim css tabela de exibição de usuarios*/
+
+/* CSS Detalhas cadastro usuario*/
+
+.controlcontainer{
+    width: 100%;
+	border-radius: 10px;
+	margin: 0 auto;
+    margin-bottom: 10px;
+	text-align: left;
+	border: 1px groove #dbdbdb;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.firstcont{
+    margin-top: 30px;
+}
+
+.lastcont{
+    margin-bottom: 30px;
+}
+
+.exibetitulo {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
