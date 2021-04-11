@@ -24,7 +24,7 @@
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="">
+                            <a class="btnacao" href="/public/views/prontuario.php">
                                 <i class="fas fa-book-medical"></i>  
                                 <span class="sr-only">(current)</span>
                             </a>
