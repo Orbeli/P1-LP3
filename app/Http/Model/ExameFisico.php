@@ -25,7 +25,7 @@ class ExameFisico {
 	private $complementares;
 	private $definitivo;
 	private $proservacao;
-	private $tratamento;
+	private $plano;
 	private $alunos_exame;
 	private $professor_exame;
 	private $questionario_id;

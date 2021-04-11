@@ -14,7 +14,7 @@ class ExameFisicoService {
 	}
 
 	public function inserir() { //create
-		$query = 'INSERT INTO exame_fisico (labio, mucosa, lingua, soalho, palato_duro, garganta, palato_mole, alveolar, gengiva, salivar, linfonodos, atm, mastigadores, oclusao, alteracoes, pamax, pamin, presuntivo, complementares, definitivo, proservacao, tratamento, alunos_exame, professor_exame, questionario_id) VALUES (
+		$query = 'INSERT INTO exame_fisico (labio, mucosa, lingua, soalho, palato_duro, garganta, palato_mole, alveolar, gengiva, salivar, linfonodos, atm, mastigadores, oclusao, alteracoes, pamax, pamin, presuntivo, complementares, definitivo, proservacao, plano, alunos_exame, professor_exame, questionario_id) VALUES (
 			:labio,
 			:mucosa,
 			:lingua,
@@ -36,7 +36,7 @@ class ExameFisicoService {
 			:complementares,
 			:definitivo,
 			:proservacao,
-			:tratamento,
+			:plano,
             :alunos_exame,
 			:professor_exame,
 			:questionario_id
@@ -64,7 +64,7 @@ class ExameFisicoService {
 		$stmt->bindValue(':complementares', $this->exameFisico->__get('complementares'));
 		$stmt->bindValue(':definitivo', $this->exameFisico->__get('definitivo'));
 		$stmt->bindValue(':proservacao', $this->exameFisico->__get('proservacao'));
-		$stmt->bindValue(':tratamento', $this->exameFisico->__get('tratamento'));
+		$stmt->bindValue(':plano', $this->exameFisico->__get('plano'));
 		$stmt->bindValue(':alunos_exame', $this->exameFisico->__get('alunos_exame'));
 		$stmt->bindValue(':professor_exame', $this->exameFisico->__get('professor_exame'));
 		$stmt->bindValue(':questionario_id', $this->exameFisico->__get('questionario_id'));

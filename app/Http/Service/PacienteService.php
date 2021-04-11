@@ -49,23 +49,40 @@ class PacienteService {
 			$id = $stmt->fetchColumn();
 			$this->paciente->__set('id', $id);
 
-			return TRUE;
+			return True;
 		}
 
-		return FALSE;
+		return False;
 	}
 
-	// public function recuperar() { //read
-	// 	$query = '
-	// 		select 
-	// 			t.id, s.status, t.tarefa 
-	// 		from 	
-	// 			tb_tarefas as t left join tb_status as s on (t.id_status = s.id)';
-	// 	$stmt = $this->conexao->prepare($query);
-	// 	$stmt->execute();
-	// 	return $stmt->fetchAll(PDO::FETCH_OBJ);  
-	// }
+	public function recuperar() { //read
+		$query = 'SELECT id, nome FROM paciente;';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->execute();
 
+		return $stmt->fetchAll(PDO::FETCH_OBJ);  
+	}
+
+	public function getPaciente($id) { //read;
+		$query = '
+			SELECT * FROM paciente 
+			INNER JOIN filiacao ON 
+				paciente.id = filiacao.paciente_id
+			INNER JOIN endereco ON 
+				paciente.id = endereco.paciente_id
+			WHERE paciente.id = :id
+		';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+
+		// Se encontrou o usuário
+		if($stmt->rowCount() > 0) {
+			return $stmt->fetch(PDO::FETCH_OBJ);
+		}
+
+		header('Location: ../../');
+	}
 	// public function atualizar() { //update
 		
 	// 	$query = "update tb_tarefas set tarefa = ? where id = ?";

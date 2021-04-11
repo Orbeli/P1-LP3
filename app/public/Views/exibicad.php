@@ -1,8 +1,11 @@
-<?php require_once 'layouts/base.php'; ?>
+<?php 
+    $acao = 'listar';
+    require '../../Http/Controller/PacienteController.php';
+    require_once 'layouts/base.php';
+?>
 
 <!-- Content Section -->
 <div class="content col-md-12">
-    
     <div class="tabusers">
         <table class="table">
             <thead class="thead-dark">
@@ -14,22 +17,22 @@
             </thead>
 
             <tbody>
-                <?php for($i=0; $i <= 2; $i++){ ?>
+                <?php foreach ($pacientes as $paciente) { ?>
                     <tr>
-                        <td><?php echo 'Id ' . $i; ?></td>
-                        <td><?php echo 'teste'; ?></td>
+                        <td><?= $paciente->id; ?></td>
+                        <td><?= $paciente->nome; ?></td>
                         <td>
-                            <a class="btnacao" href="/public/views/userdetails.php">
+                            <a class="btnacao" href="/public/views/userdetails.php?paciente=<?= $paciente->id ?>">
                                 <i class="fas fa-users"></i>
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="/public/views/prontuario.php">
+                            <a class="btnacao" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
                                 <i class="fas fa-book-medical"></i>  
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="/public/views/prontuarioatendimento.php">
+                            <a class="btnacao" href="/public/views/prontuarioatendimento.php?paciente=<?= $paciente->id ?>">
                                 <i class="fas fa-notes-medical"></i>  
                                 <span class="sr-only">(current)</span>
                             </a>
@@ -43,14 +46,11 @@
                                 <i class="fas fa-trash-alt"></i> 
                                 <span class="sr-only">(current)</span>
                             </a>
-
                         </td>
                     </tr>
-                <?php } ?>                   
+                <?php } ?>
             </tbody>
-
         </table>
-
     </div>    
 </div>
 

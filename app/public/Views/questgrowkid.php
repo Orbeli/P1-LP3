@@ -452,7 +452,7 @@
                                     Tratamento/Proservação:<input  type="text" id="proservacao" name="proservacao"/>
                                 </div>
                                 <div>
-                                    Plano de Tratamento:<input  type="text" id="tratamento" name="tratamento"/>
+                                    Plano de Tratamento:<input  type="text" id="plano" name="plano"/>
                                 </div>
                             </label>
                         </div>
