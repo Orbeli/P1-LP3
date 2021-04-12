@@ -20,16 +20,9 @@
                     type="text"
                     name="nome"
                     id="nome"
+                    value="<?= $paciente->nome ?>"
                     required/>
                     <label>Nome de Usuário</label>
-            </div>
-            
-            <div class="label-float">
-                <input type="text"
-                placeholder=" "
-                name="contato" 
-                id="contato" />
-                <label>Telefone</label>
             </div>
     
             <label>
@@ -55,8 +48,9 @@
                 <input type="text" 
                 class="boxtext" 
                 type="text" 
-                name="peso" 
-                id="peso" 
+                name="peso"
+                id="peso"
+                value="<?= $paciente->peso ?>"
                 placeholder="Peso em Kg"
                 />
                 <label>Peso</label>
@@ -66,7 +60,8 @@
                 <input type="text" 
                 type="text" 
                 name="altura" 
-                id="altura" 
+                id="altura"
+                value="<?= $paciente->altura ?>"
                 placeholder="Altura em metros"
                 />
                 <label>Altura:</label>
@@ -76,7 +71,8 @@
                 <input type="text" 
                 type="text" 
                 name="cor" 
-                id="cor" 
+                id="cor"
+                value="<?= $paciente->cor ?>"
                 placeholder="Digite sua cor (Branco, pardo ou negro)"
                 required
                 />
@@ -86,7 +82,8 @@
             <div class="label-float">
                 <input type="text" 
                 name="escolaridade" 
-                id="escolaridade" 
+                id="escolaridade"
+                value="<?= $paciente->escolaridade ?>"
                 placeholder="Escolaridade"
                 required
                 />
@@ -98,7 +95,8 @@
                 <input type="text" 
                 type="text" 
                 name="profissao" 
-                id="profissao" 
+                id="profissao"
+                value="<?= $paciente->profissao ?>"
                 placeholder="Profissão"
                 required
                 />
@@ -110,7 +108,8 @@
                 <input type="text" 
                 type="text" 
                 name="rg" 
-                id="rg" 
+                id="rg"
+                value="<?= $paciente->rg ?>"
                 pattern="(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)"
                 placeholder="RG: 00.000.000-0"
                 maxLength="9"
@@ -137,7 +136,8 @@
                 <input type="text" 
                 type="text" 
                 name="estado_civil" 
-                id="estado_civil" 
+                id="estado_civil"
+                value="<?= $paciente->estado_civil ?>"
                 placeholder="Estado civil"
                 required
                 />
@@ -148,19 +148,32 @@
                 <input type="text" 
                 type="text" 
                 name="naturalidade" 
-                id="naturalidade" 
+                id="naturalidade"
+                value="<?= $paciente->naturalidade ?>"
                 placeholder="Naturalidade"
                 required
                 />
                 <label>Digite sua Naturalidade:</label>
             </div>
 
+            <div class="label-float">
+                <input type="text" 
+                type="text" 
+                name="estado_nasc" 
+                id="estado_nasc"
+                value="<?= $paciente->estado_nasc ?>"
+                placeholder="Estado"
+                required
+                />
+                <label>Digite seu Estado em que nasceu:</label>
+            </div>
 
             <div class="label-float">
                 <input type="text" 
                 type="text" 
                 name="contato" 
-                id="contato" 
+                id="contato"
+                value="<?= $paciente->contato ?>" 
                 placeholder="(99)99999-9999"
                 required
                 />
@@ -172,7 +185,8 @@
                 type="text" 
                 name="nome_pai" 
                 placeholder="Nome do Pai"
-                id="nome_pai" 
+                id="nome_pai"
+                value="<?= $paciente->nome_pai ?>" 
                 required
                 />
                 <label> Digite o nome do pai:</label>
@@ -182,7 +196,8 @@
                 <input type="text" 
                 type="text"  
                 name="nacionalidade_pai" 
-                id="nacionalidade_pai" 
+                id="nacionalidade_pai"
+                value="<?= $paciente->nacionalidade_pai ?>"
                 placeholder="Nacionalidade do Pai"
                 required
                 />
@@ -193,7 +208,8 @@
                 <input type="text" 
                 type="text" 
                 name="nome_mae" 
-                id="nome_mae" 
+                id="nome_mae"
+                value="<?= $paciente->nome_mae ?>"
                 placeholder="Nome da Mãe"
                 required
                 />
@@ -204,7 +220,8 @@
                 <input type="text" 
                 type="text" 
                 name="nacionalidade_mae" 
-                id="nacionalidade_mae" 
+                id="nacionalidade_mae"
+                value="<?= $paciente->nacionalidade_mae ?>"
                 placeholder="Nacionalidade da Mãe"
                 required
                 />
@@ -227,7 +244,8 @@
                 <input type="text" 
                 type="text" 
                 name="rua" 
-                id="rua" 
+                id="rua"
+                value="<?= $paciente->rua ?>"
                 placeholder="Endereço"
                 required
                 />
@@ -237,7 +255,8 @@
             <div class="label-float">
                 <input type="text"  
                 name="numero_endereco" 
-                id="numero_endereco" 
+                id="numero_endereco"
+                value="<?= $paciente->numero ?>"
                 placeholder="Nº"
                 required
                 />
@@ -247,7 +266,8 @@
             <div class="label-float">
                 <input type="text"  
                 name="complemento" 
-                id="complemento" 
+                id="complemento"
+                value="<?= $paciente->complemento ?>"
                 placeholder="Complemento"
                 />
                 <label>Complemento:</label>
@@ -256,7 +276,8 @@
             <div class="label-float">
                 <input type="text"  
                 name="bairro" 
-                id="bairro" 
+                id="bairro"
+                value="<?= $paciente->bairro ?>"
                 placeholder="Bairro"
                 required
                 />
@@ -266,7 +287,8 @@
             <div class="label-float">
                 <input type="text"  
                 name="cidade_endereco" 
-                id="cidade_endereco" 
+                id="cidade_endereco"
+                value="<?= $paciente->cidade ?>"
                 placeholder="Cidade"
                 required
                 />
@@ -275,13 +297,16 @@
 
             <div class="label-float">
                 <input type="text"  
-                name="estado_endereco" 
-                id="estado_endereco" 
+                name="estado" 
+                id="estado"
+                value="<?= $paciente->estado ?>"
                 placeholder="Estado"
                 required
                 />
                 <label>Estado:</label>
             </div>
+
+            <input type="hidden" name="paciente_id" value="<?= $paciente->id ?>">
             <br>
             <!-- botão submit-->
             <div>
