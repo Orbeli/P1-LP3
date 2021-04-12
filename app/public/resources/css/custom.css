@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -12,14 +12,14 @@ html {
 }
 
 body {
-    background: rgb(255,255,255);
-    background: linear-gradient(82deg, rgba(255,255,255,0) 0%, rgba(189,189,189,1) 80%);
+    
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-
+/*Footer*/
 footer{
+    position: relative;
     flex-shrink: 0;
     bottom: 0;
     width: 100%;
@@ -34,41 +34,217 @@ footer{
     flex: 1 0 auto;
 }
 
+
+.DesignFooter h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+
+}
+
+.DesignFooter .links li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: block
+}
+
+.DesignFooter .links li a {
+    color: #fff;
+}
+
+.DesignFooter .links li a:hover {
+    text-decoration: overline;
+}
+
+.DesignFooter .footer-logo {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.DesignFooter .footer-logo:hover{
+    text-decoration: overline;
+}
+
+.DesignFooter .copyright {
+    color: #fff;
+}
+
+.DesignFooter .cta {
+    -webkit-box-shadow: -20px -20px 0 0 rgba(52, 58, 64, .2);
+    box-shadow: -20px -20px 0 0 rgba(52, 58, 64, .2);
+    padding: 20px;
+    background-color: #8186d5;
+    top: -150px;
+    position: relative
+}
+
+.DesignFooter .cta h2,
+.footer-20192 .cta h3 {
+    line-height: 1.5
+}
+
+.DesignFooter .cta h3 {
+    font-size: 20px
+}
+
+@media only screen and (max-width: 300px){
+
+   a{
+    font-size: 0.9em;
+   }
+   img{
+    width: 40px;
+   }
+
+   nav img{
+       height: 40px;
+   }
+}
+
+/*Home Design*/
+
+.container{
+    position: relative;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container p{
+    font-size: 1.2em;
+}
+.container .card{
+    font-size: 10px;
+    position: relative;
+    width: 300px;
+    height: 420px;
+    background: #fff;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0, 0.2);
+    transition: 0.5s;
+}
+
+.container .card .circle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    clip-path: circle(180px at center 0);
+    text-align: center;
+}
+
+.container .card .circle h2{
+    color: rgb(12, 11, 11);
+    font-size: 4.5em;
+    padding: 30px 0;
+}
+
+.container .card .content{
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .content p{
+    color: #111010;
+}
+
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background:#000 ;
+    color: rgb(12, 11, 11);
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.container .card:nth-child(1) .circle, .container .card:nth-child(1) .content a{
+    background: #ffaf00;
+}
+
+.container .card:nth-child(2) .circle, .container .card:nth-child(2) .circle h2, .container .card:nth-child(2) .content a{
+    background: #10e6c2;
+}
+.container .card:nth-child(3) .circle, .container .card:nth-child(3) .content a{
+    background: #ddd9cd;
+}
+
+.container:hover .card{
+    fill: blur(20px);
+    transform: scale(1.1);
+    
+}
 /* inicio css do formulario Cadastro*/
 
 /* css do container*/
 #containerform{
-	width: 400px;
-	border-radius: 10px;
+    font-size: 16px;
+	width: 370px;
 	margin: 0 auto;
-	margin-top: 30px;
-    margin-bottom: 30px;
-	text-align: center;
-	border: 1px groove #dbdbdb;
 }
 
-/* css das caixas de entrada de dados*/
-.boxtext{
-	height: 25px;
-	width: 80%;
-	font-size: 18px;
-	margin-top: 20px;
-	background-color: #fff;
-	padding-left: 20px;
-	border: 1px groove black;
-}
+/*Label Design*/
+.label-float{
+    position: relative;
+    padding-top: 13px;
+  }
+  
+  .label-float input{
+    border-radius: 11px;
+    outline: none;
+    min-width: 350px;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+  }
+  
+  .label-float input:focus{
+    border: 2px solid #3951b2;
+  }
+  
+  .label-float input::placeholder{
+    color:transparent;
+  }
+  
+  .label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 3px;
+    box-sizing: border-box;
+  }
 
-/* css dos label*/
-.textformat{
-    font-size: 18px;
-}
+  .label-float input:focus + label,
+  .label-float input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #3951b2;
+  }
 
 /* css do botão submit*/
-input.submit{
+.submit{
+    
+    flex-wrap: wrap;
 	color: #fff;
 	background-color: #f79300;
 	border-color: 2px solid #db7d00;
-	padding: 5px 20px;
+	padding: 1px 20px;
 	height: 45px;
 	width: 90%;
 
@@ -91,7 +267,7 @@ label {
 
 /* CSS de formatacao das box type text*/
 input[type=text], select, textarea{
-    width: 60%;
+    width: 30%;
     padding: 8px;    
     box-sizing: initial;
     resize: vertical;
@@ -99,21 +275,24 @@ input[type=text], select, textarea{
 }
 
 .controlacontainer{
-    width: 100%;
+    width: 85%;
 	border-radius: 10px;
 	margin: 0 auto;
     margin-bottom: 10px;
-	text-align: left;
+	text-align: center;
 	border: 1px groove #dbdbdb;
     padding-left: 10px;
     padding-bottom: 10px;
-    background-color: burlywood;
+    background-color: rgb(238, 238, 227);
 }
-
 /* Fim de CSS formulario adulto e crianca*/
 
 /*inicio css tabela de exibição de usuarios*/
 
+
+.controlacontainer  h4{
+    font-size: 1.3em;
+}
 .tabusers {
     margin: 30px 50px;
     text-align: center;
@@ -140,11 +319,11 @@ input[type=text], select, textarea{
 }
 
 .firstcont{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .lastcont{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .exibetitulo {
@@ -190,3 +369,4 @@ input[type=text], select, textarea{
     box-shadow: 1px 1px 1px #999;
 }
 /* fim css prontuarioatednimento.php cadastro usuario*/
+

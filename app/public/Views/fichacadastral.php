@@ -14,283 +14,275 @@
         <div id="containerform">
             <!-- inicio formulario -->
             <br>
-            <label class="textformat">
-            Digite seu Nome:
-            </label>    
-            <input
-                class="boxtext" 
-                type="text" 
-                name="nome" 
-                id="nome"
-                value="<?= $paciente->nome ?>"
-                placeholder="Nome"/>
-            <br><br>
-            <label class="textformat">
+            <div class="label-float">
+                    <input type="text" 
+                    placeholder=" " 
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    required/>
+                    <label>Nome de Usuário</label>
+            </div>
+            
+            <div class="label-float">
+                <input type="text"
+                placeholder=" "
+                name="contato" 
+                id="contato" />
+                <label>Telefone</label>
+            </div>
+    
+            <label>
             Data de Nascimento:
             </label> <br>
             <input 
-                class="boxtext" 
                 type="date"
                 name="data_nasc"
                 id="data_nasc"
                 value="<?= $paciente->data_nasc ?>"
                 placeholder="Data de nascimento"/>
             <br><br>
-            <label for="sexo" class="textformat">
+            <label for="sexo">
             Selecione seu sexo:
-            </label><br>
-            <select name="sexo" id="sexo" class="boxtext">
+            </label>
+            <select name="sexo" id="sexo">
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
                 <option value="Outro">Outro</option>
             </select>
-            <br><br>
-            <label class="textformat">
-            Digite seu peso:
-            </label> <br>
-            <input
+            <br>
+            <div class="label-float">
+                <input type="text" 
                 class="boxtext" 
                 type="text" 
                 name="peso" 
-                id="peso"
-                value="<?= $paciente->peso ?>"
-                placeholder="Peso em Kg"/>
-            <br><br>
-            <label class="textformat">
-            Digite sua altura:
-            </label><br>
-            <input
-                class="boxtext"  
+                id="peso" 
+                placeholder="Peso em Kg"
+                />
+                <label>Peso</label>
+            </div>
+       
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="altura" 
-                id="altura"
-                value="<?= $paciente->altura ?>" 
-                placeholder="Altura em metros"/>
-            <br><br>
-            <label class="textformat">
-            Digite sua cor:
-            </label><br>
-            <input
-                class="boxtext"  
+                id="altura" 
+                placeholder="Altura em metros"
+                />
+                <label>Altura:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="cor" 
-                id="cor"
-                value="<?= $paciente->cor ?>"
-                placeholder="Digite sua cor (Branco, pardo ou negro)"/>
-            <br><br>
-            <label class="textformat">
-            Digite sua escolaridade:
-            </label><br>
-            <input 
-                class="boxtext" 
-                type="text" 
+                id="cor" 
+                placeholder="Digite sua cor (Branco, pardo ou negro)"
+                required
+                />
+                <label>Digite sua Cor:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
                 name="escolaridade" 
-                id="escolaridade"
-                value="<?= $paciente->escolaridade ?>"
-                placeholder="Escolaridade"/>
-            <br><br>
-            <label class="textformat">
-            Digite sua profissão:
-            </label><br>
-            <input 
-                class="boxtext" 
+                id="escolaridade" 
+                placeholder="Escolaridade"
+                required
+                />
+                <label>Digite sua escolaridade:</label>
+            </div>
+            
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="profissao" 
-                id="profissao"
-                value="<?= $paciente->profissao ?>"
-                placeholder="Profissão"/>
-            <br><br>
-            <label class="textformat">
-            Digite seu RG:
-            </label><br>
-            <input
-                class="boxtext" 
+                id="profissao" 
+                placeholder="Profissão"
+                required
+                />
+                <label>Digite sua profissão:</label>
+            </div>
+
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="rg" 
-                id="rg"
-                value="<?= $paciente->rg ?>"
+                id="rg" 
+                pattern="(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)"
                 placeholder="RG: 00.000.000-0"
-                maxlength="13"/>
-            <br><br>
-            <label class="textformat">
-            Digite seu CPF:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
+                maxLength="9"
+                required
+                />
+                <label>Digite seu RG:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text"  
                 name="cpf" 
                 id="cpf"
                 value="<?= $paciente->cpf ?>"
+                id="cpf" 
+                pattern="^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{3}\.?\d{3}\.?\d{3}-?\d{2})$"
                 placeholder="CPF: 000.000.000-00"
-                maxlength="15"/>
-            <br><br>
-            <label class="textformat">
-            Digite seu estado civil:
-            </label><br>
-            <input
-                class="boxtext" 
+                maxlength="15"
+                required
+                />
+                <label> Digite seu CPF:</label>
+            </div>
+            
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="estado_civil" 
-                id="estado_civil"
-                value="<?= $paciente->estado_civil ?>" 
-                placeholder="Estado civil"/>
-            <br><br>
-            <label class="textformat">
-            Digite sua Naturalidade:
-            </label><br>
-            <input
-                class="boxtext" 
+                id="estado_civil" 
+                placeholder="Estado civil"
+                required
+                />
+                <label>Digite seu estado civil:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="naturalidade" 
-                id="naturalidade"
-                value="<?= $paciente->naturalidade ?>"
-                placeholder="Naturalidade"/>
-            <br><br>
-            <label class="textformat">
-            Digite o estado:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="estado_nasc" 
-                id="estado_nasc"
-                value="<?= $paciente->estado_nasc ?>"
-                placeholder="Estado"/>
-            <br><br>
-            <label class="textformat">
-            Digite o nome do pai:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="nome_pai" 
-                id="nome_pai"
-                value="<?= $paciente->nome_pai ?>"
-                placeholder="Nome do Pai"/>
-            <br><br>
-            <label class="textformat">
-            Digite a nacionalidade do pai:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="nacionalidade_pai" 
-                id="nacionalidade_pai"
-                value="<?= $paciente->nacionalidade_pai ?>"
-                placeholder="Nacionalidade do Pai"/>
-            <br><br>
-            <label class="textformat">
-            Digite o nome da mãe:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="nome_mae" 
-                id="nome_mae"
-                value="<?= $paciente->nome_mae ?>"
-                placeholder="Nome da Mãe"/>
-            <br><br>
-            <label class="textformat">
-            Digite a nacionalidade da mãe:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="nacionalidade_mae" 
-                id="nacionalidade_mae"
-                value="<?= $paciente->nacionalidade_mae ?>"
-                placeholder="Nacionalidade da Mãe"/>
-            <br><br>
-            <label class="textformat">
-            Digite seu celular:
-            </label><br>
-            <input
-                class="boxtext" 
+                id="naturalidade" 
+                placeholder="Naturalidade"
+                required
+                />
+                <label>Digite sua Naturalidade:</label>
+            </div>
+
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="contato" 
-                id="contato"
-                value="<?= $paciente->contato ?>"
-                placeholder="Celular"/>
-            <br><br>
-            <label class="textformat">
-            Digite seu CEP:
-            </label><br>
-            <input
-                class="boxtext" 
+                id="contato" 
+                placeholder="(99)99999-9999"
+                required
+                />
+                <label> Digite seu celular:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
+                type="text" 
+                name="nome_pai" 
+                placeholder="Nome do Pai"
+                id="nome_pai" 
+                required
+                />
+                <label> Digite o nome do pai:</label>
+            </div>
+            
+               <div class="label-float">
+                <input type="text" 
+                type="text"  
+                name="nacionalidade_pai" 
+                id="nacionalidade_pai" 
+                placeholder="Nacionalidade do Pai"
+                required
+                />
+                <label>  Digite a nacionalidade do pai:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
+                type="text" 
+                name="nome_mae" 
+                id="nome_mae" 
+                placeholder="Nome da Mãe"
+                required
+                />
+                <label>Digite o nome da mãe:</label>
+            </div>
+            
+            <div class="label-float">
+                <input type="text" 
+                type="text" 
+                name="nacionalidade_mae" 
+                id="nacionalidade_mae" 
+                placeholder="Nacionalidade da Mãe"
+                required
+                />
+                <label>Digite a nacionalidade da mãe:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="CEP" 
                 id="CEP"
                 value="<?= $paciente->cep ?>"
                 placeholder="Cep"
-                maxlength="8"/>
-            <br><br>
-            <label class="textformat">
-            Digite o nome da rua:
-            </label><br>
-            <input
-                class="boxtext" 
+                required
+                />
+                <label>Digite seu CEP:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text" 
                 type="text" 
                 name="rua" 
-                id="rua"
-                value="<?= $paciente->rua ?>"
-                placeholder="Endereço"/>
-            <br><br>
-            <label class="textformat">
-            Digite o número do seu endereço:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
+                id="rua" 
+                placeholder="Endereço"
+                required
+                />
+                <label>Nome da rua:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text"  
                 name="numero_endereco" 
-                id="numero_endereco"
-                value="<?= $paciente->numero ?>"
-                placeholder="Nº"/>
-            <br><br>
-            <label class="textformat">
-            Digite o complemento do seu endereço:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
+                id="numero_endereco" 
+                placeholder="Nº"
+                required
+                />
+                <label>Número do seu endereço:</label>
+            </div>
+            
+            <div class="label-float">
+                <input type="text"  
                 name="complemento" 
-                id="complemento"
-                value="<?= $paciente->complemento ?>"
-                placeholder="Complemento"/>
-            <br><br>
-            <label class="textformat">
-            Digite o bairro:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
+                id="complemento" 
+                placeholder="Complemento"
+                />
+                <label>Complemento:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text"  
                 name="bairro" 
-                id="bairro"
-                value="<?= $paciente->bairro ?>"
-                placeholder="Bairro"/>
-            <br><br>
-            <label class="textformat">
-            Digite a cidade:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
+                id="bairro" 
+                placeholder="Bairro"
+                required
+                />
+                <label>Bairro:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text"  
                 name="cidade_endereco" 
-                id="cidade_endereco"
-                value="<?= $paciente->cidade ?>"
-                placeholder="Cidade"/>
-            <br><br>
-            <label class="textformat">
-            Digite o estado:
-            </label><br>
-            <input
-                class="boxtext" 
-                type="text" 
-                name="estado" 
-                id="estado"
-                value="<?= $paciente->estado ?>"
-                placeholder="Estado"/>
-            <br><br>
-            <input type="hidden" id="paciente_id" name="paciente_id" value="<?= $paciente->id ?>">
+                id="cidade_endereco" 
+                placeholder="Cidade"
+                required
+                />
+                <label>Cidade:</label>
+            </div>
+
+            <div class="label-float">
+                <input type="text"  
+                name="estado_endereco" 
+                id="estado_endereco" 
+                placeholder="Estado"
+                required
+                />
+                <label>Estado:</label>
+            </div>
+            <br>
             <!-- botão submit-->
             <div>
                 <input class="submit" type="submit" value="Cadastrar">
