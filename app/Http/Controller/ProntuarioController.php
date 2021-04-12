@@ -21,4 +21,11 @@
 
 		header('Location: ../../Public/views/exibicad.php');
 	}
+
+	if ($acao == 'listar') {
+		$prontuario = new Prontuario();
+		$conexao = new Connection();
+		$prontuarioService = new ProntuarioService($conexao, $prontuario);
+		$prontuarios = $prontuarioService->recuperar($_GET['paciente']);
+	}
 ?> 
