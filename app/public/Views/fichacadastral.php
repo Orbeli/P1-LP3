@@ -16,7 +16,7 @@
             document.getElementById('rua').value=("");
             document.getElementById('bairro').value=("");
             document.getElementById('cidade_endereco').value=("");
-            document.getElementById('estado_endereco').value=("");
+            document.getElementById('estado').value=("");
     }
 
     function meu_callback(conteudo) {
@@ -25,7 +25,7 @@
             document.getElementById('rua').value=(conteudo.logradouro);
             document.getElementById('bairro').value=(conteudo.bairro);
             document.getElementById('cidade_endereco').value=(conteudo.localidade);
-            document.getElementById('estado_endereco').value=(conteudo.uf);
+            document.getElementById('estado').value=(conteudo.uf);
         } //end if.
         else {
             //CEP não Encontrado.
@@ -52,7 +52,7 @@
                 document.getElementById('rua').value="...";
                 document.getElementById('bairro').value="...";
                 document.getElementById('cidade_endereco').value="...";
-                document.getElementById('estado_endereco').value="...";
+                document.getElementById('estado').value="...";
 
                 //Cria um elemento javascript.
                 var script = document.createElement('script');
@@ -94,7 +94,7 @@
                     required/>
                     <label>Nome de Usuário</label>
             </div>
-    
+
             <label>
             Data de Nascimento:
             </label> <br>
@@ -262,7 +262,7 @@
                 <label> Digite o nome do pai:</label>
             </div>
             
-               <div class="label-float">
+            <div class="label-float">
                 <input type="text" 
                 type="text"  
                 name="nacionalidade_pai" 

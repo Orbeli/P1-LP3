@@ -1,63 +1,65 @@
 $(document).ready(function() {
-    $('#copiar').on('click', function(){
-        var texto = $('#conteudo').text();
+    // $('#copiar').on('click', function(){
+    //     var texto = $('#conteudo').text();
 
-        var $temp = $("<input>");
+    //     var $temp = $("<input>");
 
-        $("body").append($temp);
+    //     $("body").append($temp);
 
-        $temp.val(texto).select();
+    //     $temp.val(texto).select();
 
-        document.execCommand("copy");
+    //     document.execCommand("copy");
 
-        $temp.remove();
+    //     $temp.remove();
 
-        $.notify("Link copiado para a área de transferência");
-    });
+    //     $.notify("Link copiado para a área de transferência");
+    // });
 
-    $('.submit-form').on('click', function() {
-        var id_form = '#'+$(this).data('form');
+    // $('.submit-form').on('click', function() {
+    //     var id_form = '#'+$(this).data('form');
 
-        var flag = 0;
+    //     var flag = 0;
 
-        $('.obrigatorio').each(function() { 
-            if( ! $(this).val()) {
-                flag = 1;
+    //     $('.obrigatorio').each(function() { 
+    //         if( ! $(this).val()) {
+    //             flag = 1;
 
-                $(this).addClass('is-invalid');
+    //             $(this).addClass('is-invalid');
 
-                $.notify({
-                    message: "O campo "+$(this).data('campo')+" é obrigatório"
-                },{
-                    type: 'danger',
-                });
-            }
-        });
+    //             $.notify({
+    //                 message: "O campo "+$(this).data('campo')+" é obrigatório"
+    //             },{
+    //                 type: 'danger',
+    //             });
+    //         }
+    //     });
 
-        console.log(id_form);
+    //     console.log(id_form);
 
-        if(flag != 1) {
-            $(id_form).trigger('submit')
-        }
-    });
+    //     if(flag != 1) {
+    //         $(id_form).trigger('submit')
+    //     }
+    // });
 
-    $(document).on('change', '.obrigatorio', function (e) {
-        if($(this).val()) {
-            $(this).removeClass('is-invalid')
-        }
-    });
+    // $(document).on('change', '.obrigatorio', function (e) {
+    //     if($(this).val()) {
+    //         $(this).removeClass('is-invalid')
+    //     }
+    // });
 
-    $('.excluir-item').on('click', function(e) {
-        e.preventDefault()
-        var url = $(this).attr('href')
-        alertify.confirm("Excluir usuário","Tem certeza que deseja remover esse usuário? Essa ação não poderá ser desfeita",
-            function() {
-                $.get(url, function() {
-                    location.reload()
-                });
-            },
-            function() { }
-        ).setting({'labels':{ok:'Excluir', cancel:'Voltar'},
-                    'defaultFocus': 'cancel'});
-    });
+    // $('.excluir-item').on('click', function(e) {
+    //     e.preventDefault()
+    //     var url = $(this).attr('href')
+    //     alertify.confirm("Excluir usuário","Tem certeza que deseja remover esse usuário? Essa ação não poderá ser desfeita",
+    //         function() {
+    //             $.get(url, function() {
+    //                 location.reload()
+    //             });
+    //         },
+    //         function() { }
+    //     ).setting({'labels':{ok:'Excluir', cancel:'Voltar'},
+    //                 'defaultFocus': 'cancel'});
+    // });
+
+    
 });
