@@ -27,4 +27,18 @@ class ProntuarioService {
 
 		return $stmt->execute();
 	}
+
+	public function recuperar($id) { //read
+		$query = 'SELECT dia, procedimentos FROM prontuario WHERE paciente_id = :id';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0) {
+			return $stmt->fetchAll(PDO::FETCH_OBJ);
+		}
+
+		header('Location: ../../');
+		// return $stmt->fetchAll(PDO::FETCH_OBJ);  
+	}
 }

@@ -28,22 +28,27 @@
                             </a>
 
                             <a class="btnacao" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
-                                <i class="fas fa-book-medical"></i>  
+                                <i class="fas fa-book-medical"></i>
                                 <span class="sr-only">(current)</span>
                             </a>
 
                             <a class="btnacao" href="/public/views/prontuarioatendimento.php?paciente=<?= $paciente->id ?>">
-                                <i class="fas fa-notes-medical"></i>  
+                                <i class="fas fa-notes-medical"></i>
                                 <span class="sr-only">(current)</span>
                             </a>
 
                             <a class="btnacao" href="">
-                                <i class="fas fa-user-edit"></i>  
+                                <i class="fas fa-user-edit"></i>
+                                <span class="sr-only">(current)</span>
+                            </a>
+
+                            <a class="btnacao" href="/public/views/checkpront.php?paciente=<?= $paciente->id ?>">
+                                <i class="fas fa-clipboard-list"></i>
                                 <span class="sr-only">(current)</span>
                             </a>
 
                             <a class="btnacao" href="/public/views/userdetails.php?acao=remover&paciente=<?= $paciente->id ?>">
-                                <i class="fas fa-trash-alt"></i> 
+                                <i class="fas fa-trash-alt"></i>
                                 <span class="sr-only">(current)</span>
                             </a>
                         </td>
