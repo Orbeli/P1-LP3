@@ -37,7 +37,7 @@
                                 <span class="sr-only">(current)</span>
                             </a>
 
-                            <a class="btnacao" href="">
+                            <a class="btnacao" href="/public/views/fichacadastral.php?acao=atualizar&paciente=<?= $paciente->id ?>">
                                 <i class="fas fa-user-edit"></i>
                                 <span class="sr-only">(current)</span>
                             </a>

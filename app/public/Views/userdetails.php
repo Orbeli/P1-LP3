@@ -27,7 +27,7 @@
                 <b>CPF:</b> <?= $paciente->cpf ?> <br>
                 <b>Estado Civil:</b> <?= $paciente->estado_civil ?> <br>
                 <b>Naturalidade:</b> <?= $paciente->naturalidade ?> <br>
-                <b>Estado:</b> <?= $paciente->estado ?> <br>
+                <b>Estado:</b> <?= $paciente->estado_nasc ?> <br>
             </div>
         </div>
 

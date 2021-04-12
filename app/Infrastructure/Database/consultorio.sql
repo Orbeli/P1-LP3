@@ -1,4 +1,4 @@
-DROP  TABLE paciente;
+DROP TABLE filiacao, endereco, questionario_infantil, conduta_crianca, exame_fisico, questionario, prontuario, paciente;
 
 CREATE TABLE paciente ( 
     id SERIAL PRIMARY KEY,
@@ -14,7 +14,7 @@ CREATE TABLE paciente (
     CPF VARCHAR(15),
     estado_civil VARCHAR(30),
     naturalidade VARCHAR(30),
-    estado VARCHAR(30)
+    estado_nasc VARCHAR(30)
 );
 
 CREATE TABLE endereco (

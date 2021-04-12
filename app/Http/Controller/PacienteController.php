@@ -27,7 +27,7 @@
 		$paciente->__set('cpf', $_POST['cpf']);
 		$paciente->__set('estado_civil', $_POST['estado_civil']);
 		$paciente->__set('naturalidade', $_POST['naturalidade']);
-		$paciente->__set('estado', $_POST['estado']);
+		$paciente->__set('estado_nasc', $_POST['estado_nasc']);
 
 		$conexao = new Connection();
 		$pacienteService = new PacienteService($conexao, $paciente);
@@ -52,7 +52,7 @@
 			$endereco->__set('numero', $_POST['numero_endereco']);
 			$endereco->__set('complemento', $_POST['complemento']);
 			$endereco->__set('bairro', $_POST['bairro']);
-			$endereco->__set('estado', $_POST['estado_endereco']);
+			$endereco->__set('estado', $_POST['estado']);
 			$endereco->__set('cidade', $_POST['cidade_endereco']);
 			$endereco->__set('contato', $_POST['contato']);
 			$endereco->__set('paciente_id', $paciente->__get('id'));
@@ -61,6 +61,61 @@
 			$enderecoService->inserir();
 		}
 		header('Location: ../../');
+	}
+
+	if ($acao == 'atualizar') {
+		if(isset($_POST['paciente_id'])) {
+			$paciente = new Paciente();
+			$paciente->__set('id', $_POST['paciente_id']);
+			$paciente->__set('nome', $_POST['nome']);
+			$paciente->__set('data_nasc', $_POST['data_nasc']);
+			$paciente->__set('sexo', $_POST['sexo']);
+			$paciente->__set('peso', $_POST['peso']);
+			$paciente->__set('altura', $_POST['altura']);
+			$paciente->__set('cor', $_POST['cor']);
+			$paciente->__set('escolaridade', $_POST['escolaridade']);
+			$paciente->__set('profissao', $_POST['profissao']);
+			$paciente->__set('rg', $_POST['rg']);
+			$paciente->__set('cpf', $_POST['cpf']);
+			$paciente->__set('estado_civil', $_POST['estado_civil']);
+			$paciente->__set('naturalidade', $_POST['naturalidade']);
+			$paciente->__set('estado_nasc', $_POST['estado_nasc']);
+
+			$conexao = new Connection();
+			$pacienteService = new PacienteService($conexao, $paciente);
+			$pacienteService->atualizar();
+
+			$filiacao = new Filiacao();
+			$filiacao->__set('nome_mae', $_POST['nome_mae']);
+			$filiacao->__set('nome_pai', $_POST['nome_pai']);
+			$filiacao->__set('nacionalidade_mae', $_POST['nacionalidade_mae']);
+			$filiacao->__set('nacionalidade_pai', $_POST['nacionalidade_pai']);
+			$filiacao->__set('paciente_id', $paciente->__get('id'));
+
+			$filiacaoService = new FiliacaoService($conexao, $filiacao);
+			$filiacaoService->atualizar();
+
+			$endereco = new Endereco();
+			$endereco->__set('rua', $_POST['rua']);
+			$endereco->__set('CEP', $_POST['CEP']);
+			$endereco->__set('numero', $_POST['numero_endereco']);
+			$endereco->__set('complemento', $_POST['complemento']);
+			$endereco->__set('bairro', $_POST['bairro']);
+			$endereco->__set('estado', $_POST['estado']);
+			$endereco->__set('cidade', $_POST['cidade_endereco']);
+			$endereco->__set('contato', $_POST['contato']);
+			$endereco->__set('paciente_id', $paciente->__get('id'));
+
+			$enderecoService = new EnderecoService($conexao, $endereco);
+			$enderecoService->atualizar();
+
+			header('Location: ../../Public/views/exibicad.php');
+		} else {
+			$paciente = new Paciente();
+			$conexao = new Connection();
+			$pacienteService = new PacienteService($conexao, $paciente);
+			$paciente = $pacienteService->getPaciente($_GET['paciente']);
+		}
 	}
 
 	if ($acao == 'listar') {
