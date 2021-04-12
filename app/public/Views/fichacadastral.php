@@ -1,8 +1,16 @@
-<?php require_once 'layouts/base.php'; ?>
+<?php
+    if ($_GET['acao'] == 'atualizar') {
+        $acao = 'atualizar';
+        require_once '../../Http/Controller/PacienteController.php';
+    } else {
+        $acao = 'inserir';
+    }
+    require_once 'layouts/base.php';
+?>
 
 <!-- Content Section -->
 <div class="content col-md-12">
-    <form method="post" action="/Http/Controller/PacienteController.php?acao=inserir">
+    <form method="post" action="/Http/Controller/PacienteController.php?acao=<?= $acao ?>">
         <div id="containerform">
             <!-- inicio formulario -->
             <br>
@@ -13,7 +21,8 @@
                 class="boxtext" 
                 type="text" 
                 name="nome" 
-                id="nome" 
+                id="nome"
+                value="<?= $paciente->nome ?>"
                 placeholder="Nome"/>
             <br><br>
             <label class="textformat">
@@ -24,6 +33,7 @@
                 type="date"
                 name="data_nasc"
                 id="data_nasc"
+                value="<?= $paciente->data_nasc ?>"
                 placeholder="Data de nascimento"/>
             <br><br>
             <label for="sexo" class="textformat">
@@ -42,7 +52,8 @@
                 class="boxtext" 
                 type="text" 
                 name="peso" 
-                id="peso" 
+                id="peso"
+                value="<?= $paciente->peso ?>"
                 placeholder="Peso em Kg"/>
             <br><br>
             <label class="textformat">
@@ -52,7 +63,8 @@
                 class="boxtext"  
                 type="text" 
                 name="altura" 
-                id="altura" 
+                id="altura"
+                value="<?= $paciente->altura ?>" 
                 placeholder="Altura em metros"/>
             <br><br>
             <label class="textformat">
@@ -62,7 +74,8 @@
                 class="boxtext"  
                 type="text" 
                 name="cor" 
-                id="cor" 
+                id="cor"
+                value="<?= $paciente->cor ?>"
                 placeholder="Digite sua cor (Branco, pardo ou negro)"/>
             <br><br>
             <label class="textformat">
@@ -72,7 +85,8 @@
                 class="boxtext" 
                 type="text" 
                 name="escolaridade" 
-                id="escolaridade" 
+                id="escolaridade"
+                value="<?= $paciente->escolaridade ?>"
                 placeholder="Escolaridade"/>
             <br><br>
             <label class="textformat">
@@ -82,7 +96,8 @@
                 class="boxtext" 
                 type="text" 
                 name="profissao" 
-                id="profissao" 
+                id="profissao"
+                value="<?= $paciente->profissao ?>"
                 placeholder="Profissão"/>
             <br><br>
             <label class="textformat">
@@ -92,7 +107,8 @@
                 class="boxtext" 
                 type="text" 
                 name="rg" 
-                id="rg" 
+                id="rg"
+                value="<?= $paciente->rg ?>"
                 placeholder="RG: 00.000.000-0"
                 maxlength="13"/>
             <br><br>
@@ -103,7 +119,8 @@
                 class="boxtext" 
                 type="text" 
                 name="cpf" 
-                id="cpf" 
+                id="cpf"
+                value="<?= $paciente->cpf ?>"
                 placeholder="CPF: 000.000.000-00"
                 maxlength="15"/>
             <br><br>
@@ -114,7 +131,8 @@
                 class="boxtext" 
                 type="text" 
                 name="estado_civil" 
-                id="estado_civil" 
+                id="estado_civil"
+                value="<?= $paciente->estado_civil ?>" 
                 placeholder="Estado civil"/>
             <br><br>
             <label class="textformat">
@@ -124,7 +142,8 @@
                 class="boxtext" 
                 type="text" 
                 name="naturalidade" 
-                id="naturalidade" 
+                id="naturalidade"
+                value="<?= $paciente->naturalidade ?>"
                 placeholder="Naturalidade"/>
             <br><br>
             <label class="textformat">
@@ -133,8 +152,9 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="estado" 
-                id="estado" 
+                name="estado_nasc" 
+                id="estado_nasc"
+                value="<?= $paciente->estado_nasc ?>"
                 placeholder="Estado"/>
             <br><br>
             <label class="textformat">
@@ -144,7 +164,8 @@
                 class="boxtext" 
                 type="text" 
                 name="nome_pai" 
-                id="nome_pai" 
+                id="nome_pai"
+                value="<?= $paciente->nome_pai ?>"
                 placeholder="Nome do Pai"/>
             <br><br>
             <label class="textformat">
@@ -154,7 +175,8 @@
                 class="boxtext" 
                 type="text" 
                 name="nacionalidade_pai" 
-                id="nacionalidade_pai" 
+                id="nacionalidade_pai"
+                value="<?= $paciente->nacionalidade_pai ?>"
                 placeholder="Nacionalidade do Pai"/>
             <br><br>
             <label class="textformat">
@@ -164,7 +186,8 @@
                 class="boxtext" 
                 type="text" 
                 name="nome_mae" 
-                id="nome_mae" 
+                id="nome_mae"
+                value="<?= $paciente->nome_mae ?>"
                 placeholder="Nome da Mãe"/>
             <br><br>
             <label class="textformat">
@@ -174,7 +197,8 @@
                 class="boxtext" 
                 type="text" 
                 name="nacionalidade_mae" 
-                id="nacionalidade_mae" 
+                id="nacionalidade_mae"
+                value="<?= $paciente->nacionalidade_mae ?>"
                 placeholder="Nacionalidade da Mãe"/>
             <br><br>
             <label class="textformat">
@@ -184,7 +208,8 @@
                 class="boxtext" 
                 type="text" 
                 name="contato" 
-                id="contato" 
+                id="contato"
+                value="<?= $paciente->contato ?>"
                 placeholder="Celular"/>
             <br><br>
             <label class="textformat">
@@ -194,7 +219,8 @@
                 class="boxtext" 
                 type="text" 
                 name="CEP" 
-                id="CEP" 
+                id="CEP"
+                value="<?= $paciente->cep ?>"
                 placeholder="Cep"
                 maxlength="8"/>
             <br><br>
@@ -205,7 +231,8 @@
                 class="boxtext" 
                 type="text" 
                 name="rua" 
-                id="rua" 
+                id="rua"
+                value="<?= $paciente->rua ?>"
                 placeholder="Endereço"/>
             <br><br>
             <label class="textformat">
@@ -215,7 +242,8 @@
                 class="boxtext" 
                 type="text" 
                 name="numero_endereco" 
-                id="numero_endereco" 
+                id="numero_endereco"
+                value="<?= $paciente->numero ?>"
                 placeholder="Nº"/>
             <br><br>
             <label class="textformat">
@@ -225,7 +253,8 @@
                 class="boxtext" 
                 type="text" 
                 name="complemento" 
-                id="complemento" 
+                id="complemento"
+                value="<?= $paciente->complemento ?>"
                 placeholder="Complemento"/>
             <br><br>
             <label class="textformat">
@@ -235,7 +264,8 @@
                 class="boxtext" 
                 type="text" 
                 name="bairro" 
-                id="bairro" 
+                id="bairro"
+                value="<?= $paciente->bairro ?>"
                 placeholder="Bairro"/>
             <br><br>
             <label class="textformat">
@@ -245,7 +275,8 @@
                 class="boxtext" 
                 type="text" 
                 name="cidade_endereco" 
-                id="cidade_endereco" 
+                id="cidade_endereco"
+                value="<?= $paciente->cidade ?>"
                 placeholder="Cidade"/>
             <br><br>
             <label class="textformat">
@@ -254,10 +285,12 @@
             <input
                 class="boxtext" 
                 type="text" 
-                name="estado_endereco" 
-                id="estado_endereco" 
+                name="estado" 
+                id="estado"
+                value="<?= $paciente->estado ?>"
                 placeholder="Estado"/>
             <br><br>
+            <input type="hidden" id="paciente_id" name="paciente_id" value="<?= $paciente->id ?>">
             <!-- botão submit-->
             <div>
                 <input class="submit" type="submit" value="Cadastrar">

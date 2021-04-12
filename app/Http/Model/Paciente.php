@@ -16,7 +16,7 @@ class Paciente {
 	private $cpf;
 	private $estado_civil;
 	private $naturalidade;
-	private $estado;
+	private $estado_nasc;
 
 	public function __get($atributo){
 		return $this->$atributo;

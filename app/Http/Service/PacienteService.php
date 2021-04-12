@@ -14,7 +14,7 @@ class PacienteService {
 	}
 
 	public function inserir() { //create
-		$query = 'INSERT INTO paciente (nome, data_nasc, sexo, peso, altura, cor, escolaridade, profissao, rg, cpf, estado_civil, naturalidade, estado) VALUES (
+		$query = 'INSERT INTO paciente (nome, data_nasc, sexo, peso, altura, cor, escolaridade, profissao, rg, cpf, estado_civil, naturalidade, estado_nasc) VALUES (
 			:nome,
 			:data_nasc,
 			:sexo,
@@ -27,7 +27,7 @@ class PacienteService {
 			:cpf,
 			:estado_civil,
 			:naturalidade,
-			:estado
+			:estado_nasc
 		) RETURNING id';
 
 		$stmt = $this->conexao->prepare($query);
@@ -43,7 +43,7 @@ class PacienteService {
 		$stmt->bindValue(':cpf', $this->paciente->__get('cpf'));
 		$stmt->bindValue(':estado_civil', $this->paciente->__get('estado_civil'));
 		$stmt->bindValue(':naturalidade', $this->paciente->__get('naturalidade'));
-		$stmt->bindValue(':estado', $this->paciente->__get('estado'));
+		$stmt->bindValue(':estado_nasc', $this->paciente->__get('estado_nasc'));
 		
 		if($stmt->execute()) {
 			$id = $stmt->fetchColumn();
@@ -55,6 +55,7 @@ class PacienteService {
 		return False;
 	}
 
+	// Lista todos os pacientes
 	public function recuperar() { //read
 		$query = 'SELECT id, nome FROM paciente;';
 		$stmt = $this->conexao->prepare($query);
@@ -63,7 +64,8 @@ class PacienteService {
 		return $stmt->fetchAll(PDO::FETCH_OBJ);  
 	}
 
-	public function getPaciente($id) { //read;
+	// Retorna um objeto paciente pelo id
+	public function getPaciente($id) {
 		$query = '
 			SELECT * FROM paciente 
 			INNER JOIN filiacao ON 
@@ -84,7 +86,8 @@ class PacienteService {
 		header('Location: ../../');
 	}
 
-	public function removePaciente($id) { //delete
+	// Remove um paciente
+	public function removePaciente($id) {
 		$query = 'DELETE FROM paciente where id = :id';
 		$stmt = $this->conexao->prepare($query);
 		$stmt->bindValue(':id', $id);
@@ -92,48 +95,45 @@ class PacienteService {
 
 		header('Location: ../../Public/views/exibicad.php');
 	}
-	// public function atualizar() { //update
-		
-	// 	$query = "update tb_tarefas set tarefa = ? where id = ?";
-	// 	$stmt = $this->conexao->prepare($query);
-	// 	$stmt->bindValue(1, $this->tarefa->__get('tarefa'));
-	// 	$stmt->bindValue(2, $this->tarefa->__get('id'));
-	// 	return $stmt->execute();
-	// }
 
-	// public function remover() { //delete
+	// Atualiza um paciente
+	public function atualizar() {
+		$query = '
+			UPDATE paciente
+			SET nome=:nome,
+				data_nasc=:data_nasc,
+				sexo=:sexo,
+				peso=:peso,
+				altura=:altura,
+				cor=:cor,
+				escolaridade=:escolaridade,
+				profissao=:profissao,
+				rg=:rg,
+				cpf=:cpf,
+				estado_civil=:estado_civil,
+				naturalidade=:naturalidade,
+				estado_nasc=:estado_nasc
+			WHERE id = :id
+		';
 
-	// 	$query = 'delete from tb_tarefas where id = :id';
-	// 	$stmt = $this->conexao->prepare($query);
-	// 	$stmt->bindValue(':id',$this->tarefa->__get('id'));
-	// 	$stmt->execute();
-	// }
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':id', $this->paciente->__get('id'));
+		$stmt->bindValue(':nome', $this->paciente->__get('nome'));
+		$stmt->bindValue(':data_nasc', $this->paciente->__get('data_nasc'));
+		$stmt->bindValue(':sexo', $this->paciente->__get('sexo'));
+		$stmt->bindValue(':peso', $this->paciente->__get('peso'));
+		$stmt->bindValue(':altura', $this->paciente->__get('altura'));
+		$stmt->bindValue(':cor', $this->paciente->__get('cor'));
+		$stmt->bindValue(':escolaridade', $this->paciente->__get('escolaridade'));
+		$stmt->bindValue(':profissao', $this->paciente->__get('profissao'));
+		$stmt->bindValue(':rg', $this->paciente->__get('rg'));
+		$stmt->bindValue(':cpf', $this->paciente->__get('cpf'));
+		$stmt->bindValue(':estado_civil', $this->paciente->__get('estado_civil'));
+		$stmt->bindValue(':naturalidade', $this->paciente->__get('naturalidade'));
+		$stmt->bindValue(':estado_nasc', $this->paciente->__get('estado_nasc'));
 
-	// public function marcarRealizada() { 
-		
-	// 	$query = "update tb_tarefas set id_status = ? where id = ?";
-	// 	$stmt = $this->conexao->prepare($query);
-	// 	$stmt->bindValue(1, $this->tarefa->__get('id_status'));
-	// 	$stmt->bindValue(2, $this->tarefa->__get('id'));
-	// 	return $stmt->execute();
-	// }
-
-	// public function recuperarTarefasPendentes(){
-
-	// 	$query = '
-	// 		select 
-	// 			t.id, s.status, t.tarefa 
-	// 		from 	
-	// 			tb_tarefas as t left join tb_status as s on (t.id_status = s.id)
-	// 		where
-	// 			t.id_status = :id_status';
-				
-	// 	$stmt = $this->conexao->prepare($query);
-	// 	$stmt->bindValue(':id_status', $this->tarefa->__get('id_status'));
-	// 	$stmt->execute();
-	// 	return $stmt->fetchAll(PDO::FETCH_OBJ);
-
-	// }
+		return $stmt->execute();
+	}
 }
 
 ?>
