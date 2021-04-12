@@ -339,26 +339,18 @@
                <h4 class="exibetitulo">
                   Apresenta alguma patologia de conduta?
                </h4>
-               <label>
-                  <div>
-                     Tiques<input type="checkbox" name="tique" value="Sim" />
-                  </div>
-                  <div>
-                     Fobias<input type="checkbox" name="fobia" value="Sim" />
-                  </div>
-                  <div>
-                     Ansiedade<input type="checkbox" name="ansiedade" value="Sim" />
-                  </div>
-                  <div>
-                     Medo<input type="checkbox" name="medo" value="Sim" />
-                  </div>
-                  <div>
-                     Birra<input type="checkbox" name="birra" value="Sim" />
-                  </div>
-                  <div>
-                     Ciúmes<input type="checkbox" name="ciume" value="Sim" />
-                  </div>
-               </label>
+               Tiques<input type="checkbox" name="tique" value="Sim" />
+
+               Fobias<input type="checkbox" name="fobia" value="Sim" />
+
+               Ansiedade<input type="checkbox" name="ansiedade" value="Sim" />
+
+               Medo<input type="checkbox" name="medo" value="Sim" />
+
+               Birra<input type="checkbox" name="birra" value="Sim" />
+
+               Ciúmes<input type="checkbox" name="ciume" value="Sim" />
+
             </div>
          </div>
          <div>
@@ -381,7 +373,7 @@
                <div>
                   <label>Lábio</label>
                   <div>
-                     <input type="radio" name="labio" value="Sim"> Normal                    
+                     <input type="radio" name="labio" value="Sim"> Normal
                      <input type="radio" name="labio" value="Alterado"> Alterado
                   </div>
                   <label>Mucosa Jugal</label>
