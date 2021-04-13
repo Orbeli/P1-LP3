@@ -109,7 +109,7 @@
 			$enderecoService = new EnderecoService($conexao, $endereco);
 			$enderecoService->atualizar();
 
-			header('Location: ../../Public/views/exibicad.php');
+			header('Location: ../../Public/views/lista_pacientes.php');
 		} else {
 			$paciente = new Paciente();
 			$conexao = new Connection();

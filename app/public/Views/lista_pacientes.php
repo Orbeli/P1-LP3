@@ -39,7 +39,7 @@
                         <td><?= $idade; ?> anos</td>
                         <td>
                             <!-- Exibe os dados do paciente -->
-                            <a class="btnacao" href="/public/views/userdetails.php?paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/paciente.php?paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-primary">
                                     <i class="fas fa-users"></i>
                                 </button>
@@ -47,7 +47,7 @@
                             </a>
 
                             <!-- Exibi a ficha de avaliacao do paciente -->
-                            <a class="btnacao" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/lista_questionario.php?paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-primary">
                                     <i class="fas fa-book-medical"></i>
                                 </button>
@@ -55,7 +55,7 @@
                             </a>
 
                             <!-- Exibe o prontuario do paciente -->
-                            <a class="btnacao" href="/public/views/checkpront.php?paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/lista_prontuario.php?paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-primary">
                                     <i class="fas fa-clipboard-list"></i>
                                 </button>
@@ -63,7 +63,7 @@
                             </a>
 
                             <!-- Adiciona um prontuario -->
-                            <a class="btnacao" href="/public/views/prontuarioatendimento.php?paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-success">
                                     <i class="fas fa-notes-medical"></i>
                                 </button>
@@ -79,7 +79,7 @@
                             </a>
 
                             <!-- Remove o paciente -->
-                            <a class="btnacao" href="/public/views/userdetails.php?acao=remover&paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/paciente.php?acao=remover&paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
