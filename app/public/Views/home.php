@@ -10,7 +10,7 @@
             <div class="content">
                 <p>A ficha cadastral tem como intuito de salvar seus dados em nossa plataforma para construirmos seu historico de atendimento com nossa equipe, 
                     assim agilizando o processo de seu atendimento durante seu tratamento.</p>
-                <a class="nav-link" href="/public/views/fichacadastral.php">Ficha Cadastral<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/public/views/cadastro_paciente.php">Ficha Cadastral<span class="sr-only">(current)</span></a>
             </div>
         </div>
 

@@ -71,7 +71,7 @@
                             </a>
 
                             <!-- Edita o paciente -->
-                            <a class="btnacao" href="/public/views/fichacadastral.php?acao=atualizar&paciente=<?= $paciente->id ?>">
+                            <a class="btnacao" href="/public/views/cadastro_paciente.php?acao=atualizar&paciente=<?= $paciente->id ?>">
                                 <button type="button" class="btn btn-info">
                                     <i class="fas fa-user-edit"></i>
                                 </button>
