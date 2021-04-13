@@ -201,6 +201,7 @@
                   <label>Qual a frequência?</label>
                   <input type="text" 
                      id="freq"
+                     class="mask-dois-n"
                      name="frequencia"/> /dia
             </div>
          </div>
@@ -227,7 +228,7 @@
                   <input type="radio" name="tipo_amamentacao" value="Natural"> Natural
                   <input type="radio" name="tipo_amamentacao" value="Mamadeira"> Mamadeira 
                   <br>
-                  <label>até a idade de:</label><input type="text" id="amament" name="idade_amamentacao" />
+                  <label>até a idade de:</label><input type="text" id="amament" class="mask-dois-n" name="idade_amamentacao" />
                </div>
                <div>
                   <label>Já lhe foi dito para não tomar anestesia local?</label>
@@ -462,7 +463,8 @@
                <label>Pressão Arterial Máxima:</label>
                <input  type="text" 
                   id="pamax" 
-                  name="pamax" 
+                  name="pamax"
+                  class="mask-tres-n"
                   placeholder="em mmgH"
                   required
                   />
@@ -472,6 +474,7 @@
                   type="text" 
                   id="pamin" 
                   name="pamin" 
+                  class="mask-tres-n" 
                   placeholder="em mmgH"
                   />
                <br>

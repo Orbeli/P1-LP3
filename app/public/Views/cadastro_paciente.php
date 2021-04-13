@@ -179,6 +179,7 @@
                 type="text" 
                 name="rg" 
                 id="rg"
+                class="rg"
                 value="<?= $paciente->rg ?>"
                 pattern="(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)"
                 placeholder="RG: 00.000.000-0"
@@ -191,9 +192,9 @@
             <div class="label-float">
                 <input type="text"  
                 name="cpf" 
-                id="cpf"
                 value="<?= $paciente->cpf ?>"
-                id="cpf" 
+                id="cpf"
+                class="cpf"
                 pattern="^(\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{3}\.?\d{3}\.?\d{3}-?\d{2})$"
                 placeholder="CPF: 000.000.000-00"
                 maxlength="15"
@@ -243,6 +244,7 @@
                 type="text" 
                 name="contato" 
                 id="contato"
+                class="contato"
                 value="<?= $paciente->contato ?>" 
                 placeholder="(99)99999-9999"
                 required
@@ -300,9 +302,9 @@
 
             <div class="label-float">
                 <input type="text" 
-                onblur="pesquisacep(this.value)"; 
                 name="CEP" 
                 id="CEP"
+                class="cep"
                 value="<?= $paciente->cep ?>"
                 placeholder="Cep"
                 maxlength="9"
@@ -326,6 +328,7 @@
                 <input type="text"  
                 name="numero_endereco" 
                 id="numero_endereco"
+                class="numero_endereco"
                 value="<?= $paciente->numero ?>"
                 placeholder="Nº"
                 required

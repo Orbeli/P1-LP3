@@ -79,12 +79,10 @@
                             </a>
 
                             <!-- Remove o paciente -->
-                            <a class="btnacao" href="/public/views/paciente.php?acao=remover&paciente=<?= $paciente->id ?>">
-                                <button type="button" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                            <button type="button" class="btn btn-danger excluir-item" href="/public/views/paciente.php?acao=remover&paciente=<?= $paciente->id ?>">
+                                <i class="fas fa-trash-alt"></i>
                                 <span class="sr-only">(current)</span>
-                            </a>
+                            </button>
                         </td>
                     </tr>
                 <?php } ?>
