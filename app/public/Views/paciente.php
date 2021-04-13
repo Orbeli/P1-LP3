@@ -8,8 +8,7 @@
 <div class="content col-md-12">
 
     <div>
-
-        <div class="centraliza">
+        <div class="customDetails">
             <div class="controlcontainer col-md-6 firstcont">
                 <h4 class="exibetitulo"> 
                     Dados Gerais Paciente 
@@ -31,7 +30,7 @@
             </div>
         </div>
 
-        <div class="centraliza">
+        <div class="customDetails">
             <div class="controlcontainer col-md-6 firstcont"> 
                 <h4 class="exibetitulo"> 
                     Dados de endereço e telefone
