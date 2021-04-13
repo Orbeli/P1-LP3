@@ -56,9 +56,22 @@ class PacienteService {
 	}
 
 	// Lista todos os pacientes
-	public function recuperar() { //read
-		$query = 'SELECT id, nome, cpf, data_nasc FROM paciente;';
-		$stmt = $this->conexao->prepare($query);
+	public function recuperar($busca = "") { //read
+		$busca = $this->clean($busca);
+
+		if ($busca == "") {
+			$query = "SELECT id, nome, cpf, data_nasc FROM paciente";
+			$stmt = $this->conexao->prepare($query);
+		} else {
+			$query = "
+				SELECT id, nome, cpf, data_nasc
+				FROM paciente
+				WHERE LOWER(nome) LIKE :busca OR cpf LIKE :busca
+			";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->bindValue(':busca', "%".$busca."%");
+			$stmt->bindValue(':busca', "%".$busca."%");
+		}
 		$stmt->execute();
 
 		return $stmt->fetchAll(PDO::FETCH_OBJ);  
@@ -133,6 +146,13 @@ class PacienteService {
 		$stmt->bindValue(':estado_nasc', $this->paciente->__get('estado_nasc'));
 
 		return $stmt->execute();
+	}
+
+	public function clean($string) {
+		$string = str_replace(' ', '', $string); // Replaces all spaces with hyphens.
+		$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+		
+		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
 	}
 }
 

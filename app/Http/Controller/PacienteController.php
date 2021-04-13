@@ -122,7 +122,7 @@
 		$paciente = new Paciente();
 		$conexao = new Connection();
 		$pacienteService = new PacienteService($conexao, $paciente);
-		$pacientes = $pacienteService->recuperar();
+		$pacientes = $pacienteService->recuperar($_GET['busca']);
 	}
 
 	if ($acao == 'recuperar') {
@@ -138,20 +138,4 @@
 		$pacienteService = new PacienteService($conexao, $paciente);
 		$paciente = $pacienteService->removePaciente($_GET['paciente']);
 	}
-	// } else if($acao == 'atualizar'){
-
-	// 	$tarefa = new Tarefa();
-	// 	$tarefa->__set('id', $_POST['id'])->__set('tarefa', $_POST['tarefa']);
-
-	// 	$conexao = new Conexao();
-
-	// 	$tarefaService = new tarefaService($conexao, $tarefa);
-	// 	if($tarefaService->atualizar()){
-
-	// 		if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
-	// 			header('Location: index.php');	
-	// 		} else {
-	// 			header('Location: todas_tarefas.php');
-	// 		}
-	// 	}
 ?>

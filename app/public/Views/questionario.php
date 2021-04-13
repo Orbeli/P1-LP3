@@ -8,8 +8,9 @@
          <label>Cadastro</label>
          <input
             class="text"
-            type="text"
+            type="hidden"
             id="Id"
+            value="<?= $_GET['paciente'] ?>"
             name="paciente_id"
             placeholder="Nº de ID..."
             required
