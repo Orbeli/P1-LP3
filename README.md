@@ -26,7 +26,14 @@ Projeto pode ser instalado com [Docker](https://www.docker.com/), caso opte por 
     docker-compose exec app composer install
 ```
 
-5) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
+5) Renomear o arquivo .env.example para .env :
+
+6) Criar as tabelas no banco:
+```
+    docker exec app_db_1 /bin/sh -c 'psql --username=username --dbname=database </var/scripts/consultorio.sql'
+```
+
+7) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
 
 ---
 ## Links
