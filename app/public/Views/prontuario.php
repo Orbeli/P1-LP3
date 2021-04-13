@@ -9,9 +9,9 @@
 
     <div>
 
-        <h1 class="exibetitulo">Prontuário</h1>
+        <h1 class="exibetitulo">Ficha de Avaliação</h1>
         <div class="centraliza">
-            <div class="controlecontainer col-md-6 firstcont">
+            <div class="controlecontainer col-md-6 firstcont lastcont">
                 <h4>Questionário de Saúde</h4>
                 <b>Queixa Principal</b><br>
                 <?= $questionario->queixa ?>
@@ -48,11 +48,7 @@
                 <b>7- Já desmaiou alguma vez?</b><br>
                 <?= $questionario->desmaio == 1 ? 'Sim' : 'Não' ?>
                 <br>
-            </div>
-        </div>
-
-        <div class=centraliza>
-            <div class="controlecontainer col-md-6 firstcont"> 
+         
 
                 <b>8- Está sob tratamento médico?</b><br>
                 <?= $questionario->tratamento == 1 ? 'Sim' : 'Não' ?>
@@ -175,6 +171,13 @@
                 <b>Tem o sono:</b><br>
                 <?= $questionario->sono ?>
                 <br>
+
+                <b>Alimentação</b><br>
+                <?= $questionario->alimentacao ?>
+                <br>
+                
+            </div>
+                
             </div>
         </div>
 
@@ -212,12 +215,7 @@
                 </div>
             </div>
 
-            <div class=centraliza>
-                <div class="controlecontainer col-md-6 lastcont"> 
-                    <h4 class="exibetitulo">Alimentação</h4>  
-                    <?= $questionario->alimentacao ?>
-                </div>
-            </div>
+            
         </div> 
 
         <div class=centraliza>

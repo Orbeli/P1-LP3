@@ -305,13 +305,13 @@
                </h4>
                <label>
                   <div>
-                     <input type="radio" name="alimentacao" value="Rejeita"> Rejeita 
+                     <input type="radio" name="alimentacao" value="Rejeita Alimentação"> Rejeita 
                   </div>
                   <div>
-                     <input type="radio" name="alimentacao" value="AlimentaNormalmente"> Alimenta-se normalmente
+                     <input type="radio" name="alimentacao" value="Alimenta-se Normalmente"> Alimenta-se normalmente
                   </div>
                   <div>
-                     <input type="radio" name="alimentacao" value="SupraAlimenta"> Supra alimenta-se
+                     <input type="radio" name="alimentacao" value="Supra Alimenta-se"> Supra alimenta-se
                   </div>
                </label>
             </div>

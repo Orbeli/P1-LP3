@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 html {
@@ -271,7 +271,7 @@ input[type=text], select, textarea{
     padding: 8px;    
     box-sizing: initial;
     resize: vertical;
-    height: 15px;
+    height: 30px;
 }
 
 .controlacontainer{
