@@ -10,8 +10,8 @@
     <div>
 
         <h1 class="exibetitulo">Prontuário</h1>
-        <div class="col-md-6">
-            <div class="controlcontainer firstcont">
+        <div class="centraliza">
+            <div class="controlecontainer col-md-6 firstcont">
                 <h4>Questionário de Saúde</h4>
                 <b>Queixa Principal</b><br>
                 <?= $questionario->queixa ?>
@@ -51,8 +51,8 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer firstcont"> 
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 firstcont"> 
 
                 <b>8- Está sob tratamento médico?</b><br>
                 <?= $questionario->tratamento == 1 ? 'Sim' : 'Não' ?>
@@ -77,7 +77,7 @@
                 <b>13 -	Você e/ou algum familiar  teve algumas dessas doenças?</b><br>
                 <br>
 
-                <div class="col-md-6">
+                <div>
                     <b>Tuberculose</b><br>
                     <?= $questionario->tuberculose == 1 ? 'Sim' : 'Não' ?>
                     <br>
@@ -95,7 +95,7 @@
                     <br>
                 </div>
 
-                <div class="col-md-6">
+                <div>
                     <b>Sarampo</b><br>
                     <?= $questionario->sarampo == 1 ? 'Sim' : 'Não' ?>
                     <br>
@@ -119,8 +119,8 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer lastcont">
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 lastcont">
                 <h4 class="exibetitulo">Questionário Infantil</h4><br>
 
                 <b>Histórico Gestacional</b><br>
@@ -153,8 +153,8 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer lastcont"> 
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 lastcont"> 
                 <h4 class="exibetitulo">Conduta da Criança</h4>
 
                 <b>Durante os primeiros 2 anos de vida a criança:</b><br>
@@ -179,8 +179,8 @@
         </div>
 
         <div class="col-md-12">
-            <div class="col-md-6">
-                <div class="controlcontainer lastcont"> 
+            <div class=centraliza>
+                <div class="controlecontainer col-md-6 lastcont"> 
                     <h4 class="exibetitulo">Apresenta Alguma Patologia de Conduta:</h4>
                     <b>Ansiedade:</b><br>
                     <?= $questionario->ansiedade ? 'Sim' : 'Não' ?>
@@ -200,8 +200,8 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="controlcontainer lastcont"> 
+            <div class=centraliza>
+                <div class="controlecontainer col-md-6 lastcont"> 
                     <h4 class="exibetitulo">Conduta Psicomotora:</h4>
                     <b>Postura:</b> <?= $questionario->postura_normal == 1 ? 'Postura normal' : 'Postura alterada' ?> <br>
                     <b>Fala:</b> <?= $questionario->fala_normal == 1 ? 'Fonação normal' : 'Distúrbios de fala' ?> <br>
@@ -212,18 +212,18 @@
                 </div>
             </div>
 
-            <div class="col-md-12">
-                <div class="controlcontainer lastcont"> 
+            <div class=centraliza>
+                <div class="controlecontainer col-md-6 lastcont"> 
                     <h4 class="exibetitulo">Alimentação</h4>  
                     <?= $questionario->alimentacao ?>
                 </div>
             </div>
         </div> 
 
-        <div class="col-md-6">
-            <div class="controlcontainer lastcont"> 
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 lastcont"> 
                 <h4 class="exibetitulo">Exame Físico</h4>
-                <div class="col-md-6">
+                <div>
 
                     <b>Lábio:</b><br>
                     <?= $questionario->labio == 1 ? 'Normal' : 'Alterado' ?>
@@ -284,8 +284,8 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer lastcont">
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 lastcont">
                 <h4 class="exibetitulo">Desfecho de Consulta:</h4>
                 <b>Alterações Encontradas:</b><?= $questionario->alteracoes ?><br>
                 <br>
@@ -313,8 +313,8 @@
             </div>
         </div>
 
-        <div class="col-md-12">
-            <div class="controlcontainer lastcont"> 
+        <div class=centraliza>
+            <div class="controlecontainer col-md-6 lastcont"> 
                 <h4 class="exibetitulo">Responsáveis do Tratamento</h4>
                 <b>Alunos (Conduta da Criança):</b><br>        
                 <?= $questionario->alunos ?>

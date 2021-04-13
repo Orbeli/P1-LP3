@@ -9,8 +9,8 @@
 
     <div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer firstcont">
+        <div class="centraliza">
+            <div class="controlcontainer col-md-6 firstcont">
                 <h4 class="exibetitulo"> 
                     Dados Gerais Paciente 
                 </h4>
@@ -31,8 +31,8 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer firstcont"> 
+        <div class="centraliza">
+            <div class="controlcontainer col-md-6 firstcont"> 
                 <h4 class="exibetitulo"> 
                     Dados de endereço e telefone
                 </h4>
@@ -47,8 +47,8 @@
             </div>   
         </div>
 
-        <div class="col-md-6">
-            <div class="controlcontainer lastcont"> 
+        <div class="centraliza">
+            <div class="controlcontainer col-md-6 lastcont"> 
                 <h4 class="exibetitulo"> 
                     Dados da filiação
                 </h4>
