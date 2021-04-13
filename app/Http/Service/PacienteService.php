@@ -93,7 +93,7 @@ class PacienteService {
 		$stmt->bindValue(':id', $id);
 		$stmt->execute();
 
-		header('Location: ../../Public/views/exibicad.php');
+		header('Location: ../../Public/views/lista_pacientes.php');
 	}
 
 	// Atualiza um paciente

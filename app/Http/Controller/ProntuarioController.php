@@ -19,7 +19,7 @@
 		$prontuarioService = new ProntuarioService($conexao, $prontuario);
 		$prontuarioService->inserir();
 
-		header('Location: ../../Public/views/exibicad.php');
+		header('Location: ../../Public/views/lista_pacientes.php');
 	}
 
 	if ($acao == 'listar') {
