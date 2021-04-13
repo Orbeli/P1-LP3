@@ -36,8 +36,8 @@ footer{
 
 
 .DesignFooter h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
     margin-top: 0;
 
 }
@@ -103,12 +103,30 @@ footer{
    }
 }
 
+.hr-middle {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    margin: 8px 0px;
+  }
+  
+  .hr-middle::before,
+  .hr-middle::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.945);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 20px;
+  }
 /*Home Design*/
 
 .container{
     position: relative;
     width: 1150px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -296,7 +314,7 @@ input[type=text], select, textarea{
     padding-bottom: 10px;  
 }
 
-.centraliza{
+.customDetails{
     text-align: center;   
     margin: 0 auto;
     display: block;
