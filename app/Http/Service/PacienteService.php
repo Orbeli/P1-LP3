@@ -57,7 +57,7 @@ class PacienteService {
 
 	// Lista todos os pacientes
 	public function recuperar() { //read
-		$query = 'SELECT id, nome FROM paciente;';
+		$query = 'SELECT id, nome, cpf, data_nasc FROM paciente;';
 		$stmt = $this->conexao->prepare($query);
 		$stmt->execute();
 
