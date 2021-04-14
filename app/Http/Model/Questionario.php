@@ -26,6 +26,7 @@ class Questionario {
 	private $caxumba;
 	private $varicela;
 	private $fumante;
+	private $outros;
 	private $frequencia;
 	private $paciente_id;
 

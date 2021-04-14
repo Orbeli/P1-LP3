@@ -16,7 +16,8 @@ function meu_callback(conteudo) {
     //CEP não Encontrado.
     else {
         limpa_formulário_cep();
-        alert("CEP não encontrado.");
+        alertify.set('notifier','position', 'top-center');
+        alertify.warning('CEP não encontrado');
     }
 }
 
@@ -50,7 +51,8 @@ function pesquisacep(valor) {
         //cep é inválido.
         else {
             limpa_formulário_cep();
-            alert("Formato de CEP inválido.");
+            alertify.set('notifier','position', 'top-center');
+            alertify.error('Formato de CEP inválido');
         }
     }
     //cep sem valor, limpa formulário.
@@ -63,7 +65,6 @@ $(document).ready(function() {
     $("#CEP").blur(function(){
         pesquisacep($(this).val())
     });
-    //                 onblur="pesquisacep(this.value)"; 
     // $('#copiar').on('click', function(){
     //     var texto = $('#conteudo').text();
 
@@ -111,6 +112,9 @@ $(document).ready(function() {
     //         $(this).removeClass('is-invalid')
     //     }
     // });
+
+    // inicia tooltip bootstrap
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
     $('.excluir-item').on('click', function(e) {
         e.preventDefault()

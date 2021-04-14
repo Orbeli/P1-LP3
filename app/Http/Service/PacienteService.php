@@ -96,7 +96,7 @@ class PacienteService {
 			return $stmt->fetch(PDO::FETCH_OBJ);
 		}
 
-		header('Location: ../../');
+		header('Location: ../../Public/views/lista_pacientes.php');
 	}
 
 	// Remove um paciente

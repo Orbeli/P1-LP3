@@ -54,7 +54,7 @@
                             <td><?= $idade; ?> anos</td>
                             <td>
                                 <!-- Adiciona um prontuario -->
-                                <a class="btnacao" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Cadastrar Prontuário" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-success">
                                         <i class="fas fa-notes-medical"></i>
                                     </button>
@@ -62,7 +62,7 @@
                                 </a>
 
                                 <!-- Adiciona uma ficha de avaliacao -->
-                                <a class="btnacao" href="/public/views/questionario.php?paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Preencher Questionário" href="/public/views/questionario.php?paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-success">
                                         <i class="fas fa-book-medical"></i>
                                     </button>
@@ -70,7 +70,7 @@
                                 </a>
 
                                 <!-- Exibe os dados do paciente -->
-                                <a class="btnacao" href="/public/views/paciente.php?paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Dados do Paciente" href="/public/views/paciente.php?paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-primary">
                                         <i class="fas fa-users"></i>
                                     </button>
@@ -78,7 +78,7 @@
                                 </a>
 
                                 <!-- Exibi a ficha de avaliacao do paciente -->
-                                <a class="btnacao" href="/public/views/lista_questionario.php?paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Ver Questionário" href="/public/views/lista_questionario.php?paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-primary">
                                         <i class="fas fa-book-medical"></i>
                                     </button>
@@ -86,7 +86,7 @@
                                 </a>
 
                                 <!-- Exibe o prontuario do paciente -->
-                                <a class="btnacao" href="/public/views/lista_prontuario.php?paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Ver Prontuário" href="/public/views/lista_prontuario.php?paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-primary">
                                         <i class="fas fa-clipboard-list"></i>
                                     </button>
@@ -94,7 +94,7 @@
                                 </a>
 
                                 <!-- Edita o paciente -->
-                                <a class="btnacao" href="/public/views/cadastro_paciente.php?acao=atualizar&paciente=<?= $paciente->id ?>">
+                                <a class="btnacao" data-toggle="tooltip" title="Editar Paciente" href="/public/views/cadastro_paciente.php?acao=atualizar&paciente=<?= $paciente->id ?>">
                                     <button type="button" class="btn btn-info">
                                         <i class="fas fa-user-edit"></i>
                                     </button>
@@ -102,7 +102,7 @@
                                 </a>
 
                                 <!-- Remove o paciente -->
-                                <button type="button" class="btn btn-danger excluir-item" href="/public/views/paciente.php?acao=remover&paciente=<?= $paciente->id ?>">
+                                <button type="button" data-toggle="tooltip" title="Remover Paciente" class="btn btn-danger excluir-item" href="/public/views/paciente.php?acao=remover&paciente=<?= $paciente->id ?>">
                                     <i class="fas fa-trash-alt"></i>
                                     <span class="sr-only">(current)</span>
                                 </button>
