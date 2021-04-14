@@ -13,100 +13,122 @@
 
 	$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
+	function setData($model, $keys) {
+		foreach ($keys as $key) {
+			$model->__set($key, $_POST[$key]);
+		}
+	}
+
 	if ($acao == 'inserir') {
 		$paciente = new Paciente();
-		$paciente->__set('nome', $_POST['nome']);
-		$paciente->__set('data_nasc', $_POST['data_nasc']);
-		$paciente->__set('sexo', $_POST['sexo']);
-		$paciente->__set('peso', $_POST['peso']);
-		$paciente->__set('altura', $_POST['altura']);
-		$paciente->__set('cor', $_POST['cor']);
-		$paciente->__set('escolaridade', $_POST['escolaridade']);
-		$paciente->__set('profissao', $_POST['profissao']);
-		$paciente->__set('rg', $_POST['rg']);
-		$paciente->__set('cpf', $_POST['cpf']);
-		$paciente->__set('estado_civil', $_POST['estado_civil']);
-		$paciente->__set('naturalidade', $_POST['naturalidade']);
-		$paciente->__set('estado_nasc', $_POST['estado_nasc']);
-
+		$filiacao = new Filiacao();
+		$endereco = new Endereco();
 		$conexao = new Connection();
+
+		$keys_paciente = array(
+			"nome",
+			"data_nasc",
+			"sexo",
+			"peso",
+			"altura",
+			"cor",
+			"escolaridade",
+			"profissao",
+			"rg",
+			"cpf",
+			"estado_civil",
+			"naturalidade",
+			"estado_nasc"
+		);
+		$keys_filiacao = array(
+			"nome_mae",
+			"nome_pai",
+			"nacionalidade_mae",
+			"nacionalidade_pai"
+		);
+		$keys_endereco = array(
+			"rua",
+			"CEP",
+			"bairro",
+			"estado",
+			"complemento",
+			"contato"
+		);
+
+		setData($paciente, $keys_paciente);
+		setData($filiacao, $keys_filiacao);
+		setData($endereco, $keys_endereco);
+		
 		$pacienteService = new PacienteService($conexao, $paciente);
+		$pacienteService->inserir();
 
-		// Se inserir o paciente, insere os dados complementares
-		if ($pacienteService->inserir()) {
-			// Insere filiacao do paciente
-			$filiacao = new Filiacao();
-			$filiacao->__set('nome_mae', $_POST['nome_mae']);
-			$filiacao->__set('nome_pai', $_POST['nome_pai']);
-			$filiacao->__set('nacionalidade_mae', $_POST['nacionalidade_mae']);
-			$filiacao->__set('nacionalidade_pai', $_POST['nacionalidade_pai']);
-			$filiacao->__set('paciente_id', $paciente->__get('id'));
+		$filiacaoService = new FiliacaoService($conexao, $filiacao);
+		$enderecoService = new EnderecoService($conexao, $endereco);
 
-			$filiacaoService = new FiliacaoService($conexao, $filiacao);
-			$filiacaoService->inserir();
+		$endereco->__set('numero', $_POST['numero_endereco']);
+		$endereco->__set('cidade', $_POST['cidade_endereco']);
+		$endereco->__set('paciente_id', $paciente->__get('id'));
+		$filiacao->__set('paciente_id', $paciente->__get('id'));
 
-			// Insere endereco do paciente
-			$endereco = new Endereco();
-			$endereco->__set('rua', $_POST['rua']);
-			$endereco->__set('CEP', $_POST['CEP']);
-			$endereco->__set('numero', $_POST['numero_endereco']);
-			$endereco->__set('complemento', $_POST['complemento']);
-			$endereco->__set('bairro', $_POST['bairro']);
-			$endereco->__set('estado', $_POST['estado']);
-			$endereco->__set('cidade', $_POST['cidade_endereco']);
-			$endereco->__set('contato', $_POST['contato']);
-			$endereco->__set('paciente_id', $paciente->__get('id'));
+		$filiacaoService->inserir();
+		$enderecoService->inserir();
 
-			$enderecoService = new EnderecoService($conexao, $endereco);
-			$enderecoService->inserir();
-		}
 		header('Location: ../../');
 	}
 
 	if ($acao == 'atualizar') {
-		if(isset($_POST['paciente_id'])) {
+		if(isset($_POST['id'])) {
 			$paciente = new Paciente();
-			$paciente->__set('id', $_POST['paciente_id']);
-			$paciente->__set('nome', $_POST['nome']);
-			$paciente->__set('data_nasc', $_POST['data_nasc']);
-			$paciente->__set('sexo', $_POST['sexo']);
-			$paciente->__set('peso', $_POST['peso']);
-			$paciente->__set('altura', $_POST['altura']);
-			$paciente->__set('cor', $_POST['cor']);
-			$paciente->__set('escolaridade', $_POST['escolaridade']);
-			$paciente->__set('profissao', $_POST['profissao']);
-			$paciente->__set('rg', $_POST['rg']);
-			$paciente->__set('cpf', $_POST['cpf']);
-			$paciente->__set('estado_civil', $_POST['estado_civil']);
-			$paciente->__set('naturalidade', $_POST['naturalidade']);
-			$paciente->__set('estado_nasc', $_POST['estado_nasc']);
-
-			$conexao = new Connection();
-			$pacienteService = new PacienteService($conexao, $paciente);
-			$pacienteService->atualizar();
-
 			$filiacao = new Filiacao();
-			$filiacao->__set('nome_mae', $_POST['nome_mae']);
-			$filiacao->__set('nome_pai', $_POST['nome_pai']);
-			$filiacao->__set('nacionalidade_mae', $_POST['nacionalidade_mae']);
-			$filiacao->__set('nacionalidade_pai', $_POST['nacionalidade_pai']);
-			$filiacao->__set('paciente_id', $paciente->__get('id'));
-
-			$filiacaoService = new FiliacaoService($conexao, $filiacao);
-			$filiacaoService->atualizar();
-
 			$endereco = new Endereco();
-			$endereco->__set('rua', $_POST['rua']);
-			$endereco->__set('CEP', $_POST['CEP']);
-			$endereco->__set('numero', $_POST['numero_endereco']);
-			$endereco->__set('complemento', $_POST['complemento']);
-			$endereco->__set('bairro', $_POST['bairro']);
-			$endereco->__set('estado', $_POST['estado']);
-			$endereco->__set('cidade', $_POST['cidade_endereco']);
-			$endereco->__set('contato', $_POST['contato']);
-			$endereco->__set('paciente_id', $paciente->__get('id'));
+			$conexao = new Connection();
 
+			$keys_paciente = array(
+				"id",
+				"nome",
+				"data_nasc",
+				"sexo",
+				"peso",
+				"altura",
+				"cor",
+				"escolaridade",
+				"profissao",
+				"rg",
+				"cpf",
+				"estado_civil",
+				"naturalidade",
+				"estado_nasc"
+			);
+			$keys_filiacao = array(
+				"nome_mae",
+				"nome_pai",
+				"nacionalidade_mae",
+				"nacionalidade_pai"
+			);
+			$keys_endereco = array(
+				"rua",
+				"CEP",
+				"bairro",
+				"estado",
+				"complemento",
+				"contato"
+			);
+
+			setData($paciente, $keys_paciente);
+			setData($filiacao, $keys_filiacao);
+			setData($endereco, $keys_endereco);
+
+			$endereco->__set('numero', $_POST['numero_endereco']);
+			$endereco->__set('cidade', $_POST['cidade_endereco']);
+			$endereco->__set('paciente_id', $paciente->__get('id'));
+			$filiacao->__set('paciente_id', $paciente->__get('id'));
+			
+			$pacienteService = new PacienteService($conexao, $paciente);
+			$filiacaoService = new FiliacaoService($conexao, $filiacao);
 			$enderecoService = new EnderecoService($conexao, $endereco);
+
+			$pacienteService->atualizar();
+			$filiacaoService->atualizar();
 			$enderecoService->atualizar();
 
 			header('Location: ../../Public/views/lista_pacientes.php');

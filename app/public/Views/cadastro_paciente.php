@@ -309,7 +309,7 @@
                 <label>Estado:</label>
             </div>
 
-            <input type="hidden" name="paciente_id" value="<?= $paciente->id ?>">
+            <input type="hidden" name="id" value="<?= $paciente->id ?>">
             <br>
             <!-- botão submit-->
             <div>

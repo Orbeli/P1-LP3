@@ -60,13 +60,14 @@ class PacienteService {
 		$busca = $this->clean($busca);
 
 		if ($busca == "") {
-			$query = "SELECT id, nome, cpf, data_nasc FROM paciente";
+			$query = "SELECT id, nome, cpf, data_nasc FROM paciente ORDER BY id ASC";
 			$stmt = $this->conexao->prepare($query);
 		} else {
 			$query = "
 				SELECT id, nome, cpf, data_nasc
 				FROM paciente
 				WHERE LOWER(nome) LIKE :busca OR cpf LIKE :busca
+				ORDER BY id ASC
 			";
 			$stmt = $this->conexao->prepare($query);
 			$stmt->bindValue(':busca', "%".$busca."%");
