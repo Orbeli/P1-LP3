@@ -9,31 +9,29 @@ Projeto pode ser instalado com [Docker](https://www.docker.com/), caso opte por 
 
 ---
 ## Install
-1)Primeiro é preciso renomear o arquivo .env.example para .env:
-
-2)Para a instalação utilizando Docker basta ir no diretório app/ e:
+1)Para a instalação utilizando Docker basta ir no diretório app/ e:
 ```
     docker-compose up -d --build
 ```
 
-3) Após rodar o comando que ira gerar o autoloader da aplicação dentro do diretório app/:
+2) Após rodar o comando que ira gerar o autoloader da aplicação dentro do diretório app/:
 ```
     docker-compose exec app composer dump-autoload
 ```
 
-4) Dar um composer install para instalar as dependências dentro do diretório app/:
+3) Dar um composer install para instalar as dependências dentro do diretório app/:
 ```
     docker-compose exec app composer install
 ```
 
-5) Renomear o arquivo .env.example para .env :
+4) Renomear o arquivo .env.example para .env:
 
-6) Criar as tabelas no banco:
+5) Criar as tabelas no banco:
 ```
     docker exec app_db_1 /bin/sh -c 'psql --username=username --dbname=database </var/scripts/consultorio.sql'
 ```
 
-7) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
+6) Pronto, o projeto já está configurado e pode ser acessado através de seu [Localhost](http://localhost:8000/)
 
 ---
 ## Links

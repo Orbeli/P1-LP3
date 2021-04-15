@@ -8,76 +8,6 @@
     require_once 'layouts/base.php';
 ?>
 
- <!-- Adicionando Javascript -->
- <script>
-    
-    function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade_endereco').value=("");
-            document.getElementById('estado').value=("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade_endereco').value=(conteudo.localidade);
-            document.getElementById('estado').value=(conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
-
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade_endereco').value="...";
-                document.getElementById('estado').value="...";
-
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-
-                //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    };
-
-    </script>
-
 <!-- Content Section -->
 <div class="content col-md-12">
     <form method="post" action="/Http/Controller/PacienteController.php?acao=<?= $acao ?>">
@@ -101,7 +31,7 @@
             <input 
                 type="date"
                 name="data_nasc"
-                id="data_nasc"
+                id="datepicker"
                 value="<?= $paciente->data_nasc ?>"
                 placeholder="Data de nascimento"/>
             <br><br>
@@ -109,9 +39,9 @@
             Selecione seu sexo:
             </label>
             <select name="sexo" id="sexo">
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-                <option value="Outro">Outro</option>
+                <option value="Masculino" <?= $paciente->sexo == 'Masculino' ? 'selected' : '' ?>>Masculino</option>
+                <option value="Feminino" <?= $paciente->sexo == 'Feminino' ? 'selected' : '' ?>>Feminino</option>
+                <option value="Outro" <?= $paciente->sexo == 'Outro' ? 'selected' : '' ?>>Outro</option>
             </select>
             <br>
             <div class="label-float">
@@ -379,7 +309,7 @@
                 <label>Estado:</label>
             </div>
 
-            <input type="hidden" name="paciente_id" value="<?= $paciente->id ?>">
+            <input type="hidden" name="id" value="<?= $paciente->id ?>">
             <br>
             <!-- botão submit-->
             <div>

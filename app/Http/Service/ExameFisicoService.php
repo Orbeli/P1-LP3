@@ -71,6 +71,66 @@ class ExameFisicoService {
 
 		return $stmt->execute();
 	}
+
+	public function atualizar() { //create
+		$query = '
+			UPDATE exame_fisico
+			SET	labio=:labio,
+				mucosa=:mucosa,
+				lingua=:lingua,
+				soalho=:soalho,
+				palato_duro=:palato_duro,
+				garganta=:garganta,
+				palato_mole=:palato_mole,
+				alveolar=:alveolar,
+				gengiva=:gengiva,
+				salivar=:salivar,
+				linfonodos=:linfonodos,
+				atm=:atm,
+				mastigadores=:mastigadores,
+				oclusao=:oclusao,
+				alteracoes=:alteracoes,
+				pamax=:pamax,
+				pamin=:pamin,
+				presuntivo=:presuntivo,
+				complementares=:complementares,
+				definitivo=:definitivo,
+				proservacao=:proservacao,
+				plano=:plano,
+				alunos_exame=:alunos_exame,
+				professor_exame=:professor_exame
+			WHERE questionario_id = :questionario_id
+		';
+
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':labio', $this->exameFisico->__get('labio'));
+		$stmt->bindValue(':mucosa', $this->exameFisico->__get('mucosa'));
+		$stmt->bindValue(':lingua', $this->exameFisico->__get('lingua'));
+		$stmt->bindValue(':soalho', $this->exameFisico->__get('soalho'));
+		$stmt->bindValue(':palato_duro', $this->exameFisico->__get('palato_duro'));
+		$stmt->bindValue(':garganta', $this->exameFisico->__get('garganta'));
+		$stmt->bindValue(':palato_mole', $this->exameFisico->__get('palato_mole'));
+		$stmt->bindValue(':alveolar', $this->exameFisico->__get('alveolar'));
+		$stmt->bindValue(':gengiva', $this->exameFisico->__get('gengiva'));
+		$stmt->bindValue(':salivar', $this->exameFisico->__get('salivar'));
+		$stmt->bindValue(':linfonodos', $this->exameFisico->__get('linfonodos'));
+		$stmt->bindValue(':atm', $this->exameFisico->__get('atm'));
+		$stmt->bindValue(':mastigadores', $this->exameFisico->__get('mastigadores'));
+		$stmt->bindValue(':oclusao', $this->exameFisico->__get('oclusao'));
+		$stmt->bindValue(':alteracoes', $this->exameFisico->__get('alteracoes'));
+		$stmt->bindValue(':pamax', $this->exameFisico->__get('pamax'));
+		$stmt->bindValue(':pamin', $this->exameFisico->__get('pamin'));
+		$stmt->bindValue(':presuntivo', $this->exameFisico->__get('presuntivo'));
+		$stmt->bindValue(':complementares', $this->exameFisico->__get('complementares'));
+		$stmt->bindValue(':definitivo', $this->exameFisico->__get('definitivo'));
+		$stmt->bindValue(':proservacao', $this->exameFisico->__get('proservacao'));
+		$stmt->bindValue(':plano', $this->exameFisico->__get('plano'));
+		$stmt->bindValue(':alunos_exame', $this->exameFisico->__get('alunos_exame'));
+		$stmt->bindValue(':professor_exame', $this->exameFisico->__get('professor_exame'));
+		$stmt->bindValue(':questionario_id', $this->exameFisico->__get('questionario_id'));
+
+		return $stmt->execute();
+	}
 }
 
 ?>

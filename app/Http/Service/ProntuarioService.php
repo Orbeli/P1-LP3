@@ -38,7 +38,6 @@ class ProntuarioService {
 			return $stmt->fetchAll(PDO::FETCH_OBJ);
 		}
 
-		header('Location: ../../');
-		// return $stmt->fetchAll(PDO::FETCH_OBJ);  
+		header('Location: ../../Public/views/lista_pacientes.php');
 	}
 }
