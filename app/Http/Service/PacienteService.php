@@ -44,7 +44,7 @@ class PacienteService {
 		$stmt->bindValue(':estado_civil', $this->paciente->__get('estado_civil'));
 		$stmt->bindValue(':naturalidade', $this->paciente->__get('naturalidade'));
 		$stmt->bindValue(':estado_nasc', $this->paciente->__get('estado_nasc'));
-		
+
 		if($stmt->execute()) {
 			$id = $stmt->fetchColumn();
 			$this->paciente->__set('id', $id);
@@ -56,11 +56,11 @@ class PacienteService {
 	}
 
 	// Lista todos os pacientes
-	public function recuperar($busca = "") { //read
+	public function recuperar($busca = "", $limit, $offset) { //read
 		$busca = $this->clean($busca);
 
 		if ($busca == "") {
-			$query = "SELECT id, nome, cpf, data_nasc FROM paciente ORDER BY id ASC";
+			$query = "SELECT id, nome, cpf, data_nasc FROM paciente ORDER BY id ASC LIMIT :limit OFFSET :offset";
 			$stmt = $this->conexao->prepare($query);
 		} else {
 			$query = "
@@ -68,11 +68,14 @@ class PacienteService {
 				FROM paciente
 				WHERE LOWER(nome) LIKE :busca OR cpf LIKE :busca
 				ORDER BY id ASC
+				LIMIT :limit, OFFSET :offset
 			";
 			$stmt = $this->conexao->prepare($query);
 			$stmt->bindValue(':busca', "%".$busca."%");
 			$stmt->bindValue(':busca', "%".$busca."%");
 		}
+		$stmt->bindValue(':limit', $limit);
+		$stmt->bindValue(':offset', $offset);
 		$stmt->execute();
 
 		return $stmt->fetchAll(PDO::FETCH_OBJ);  
@@ -152,7 +155,7 @@ class PacienteService {
 	public function clean($string) {
 		$string = str_replace(' ', '', $string); // Replaces all spaces with hyphens.
 		$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-		
+
 		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
 	}
 }

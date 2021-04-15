@@ -35,23 +35,27 @@
 
                 <tbody>
                     <?php
-                        foreach ($pacientes as $paciente) { 
-                            // separando yyyy, mm, ddd
-                            list($ano, $mes, $dia) = explode('-', $paciente->data_nasc);
-
-                            // data atual
-                            $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
-                            // Descobre a unix timestamp da data de nascimento
-                            $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
-
-                            // cálcula a idade
-                            $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+                        foreach ($pacientes as $paciente) {
+                            if ($paciente->data_nasc != NULL) {
+                                // separando yyyy, mm, ddd
+                                list($ano, $mes, $dia) = explode('-', $paciente->data_nasc);
+    
+                                // data atual
+                                $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+                                // Descobre a unix timestamp da data de nascimento
+                                $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
+    
+                                // cálcula a idade
+                                $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25)." anos";
+                            } else {
+                                $idade = "Não Informado";
+                            }
                     ?>
                         <tr>
                             <td><?= $paciente->id; ?></td>
                             <td><?= $paciente->nome; ?></td>
                             <td><?= $paciente->cpf; ?></td>
-                            <td><?= $idade; ?> anos</td>
+                            <td><?= $idade; ?></td>
                             <td>
                                 <!-- Adiciona um prontuario -->
                                 <a class="btnacao" data-toggle="tooltip" title="Cadastrar Prontuário" href="/public/views/prontuario.php?paciente=<?= $paciente->id ?>">
@@ -111,6 +115,21 @@
                     <?php } ?>
                 </tbody>
             </table>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item <?= $pagina <= 1 ? 'disabled' : '' ?>">
+                    <a class="page-link" href="?pagina=<?= $pagina-1 ?>" tabindex="-1">Anterior</a>
+                    </li>
+                    <?php for ($page=1; $page <= $paginas; $page++) { ?>
+                        <li class="page-item"><a class="page-link" href="?pagina=<?= $page ?>"><?= $page ?></a></li>
+                    <?php } ?>
+                    <li class="page-item <?= $pagina < $paginas ? '' : 'disabled' ?>">
+                    <a class="page-link" href="?pagina=<?= $pagina+1 ?>">Proxima</a>
+                    </li>
+                </ul>
+                <p>Mostrando <?= $inicio ?> - <?= $fim ?> de <?= $total ?> resultados.</p>
+            </nav>
         </div>
     <?php } else { ?>
         <div>

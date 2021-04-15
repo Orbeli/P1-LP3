@@ -141,10 +141,31 @@
 	}
 
 	if ($acao == 'listar') {
-		$paciente = new Paciente();
 		$conexao = new Connection();
-		$pacienteService = new PacienteService($conexao, $paciente);
-		$pacientes = $pacienteService->recuperar($_GET['busca']);
+		$total = $conexao->dbConnection()->query('SELECT COUNT(*) FROM paciente')->fetchColumn();
+		if ($total != 0) {
+			$limit = 3;
+			$paginas = ceil($total / $limit);
+
+			// Verifica a pagina atual
+			$pagina = min($paginas, filter_input(INPUT_GET, 'pagina', FILTER_VALIDATE_INT, array(
+				'options' => array(
+					'default'   => 1,
+					'min_range' => 1,
+				),
+			)));
+
+			// Faz o calculo do offset
+			$offset = ($pagina - 1)  * $limit;
+
+			// Informacoes dos registros
+			$inicio = $offset + 1;
+			$fim = min(($offset + $limit), $total);
+
+			$paciente = new Paciente();
+			$pacienteService = new PacienteService($conexao, $paciente);
+			$pacientes = $pacienteService->recuperar($_GET['busca'], $limit, $offset);
+		}
 	}
 
 	if ($acao == 'recuperar') {
