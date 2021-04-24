@@ -1,5 +1,5 @@
 <!-- Includes metas e header -->
-<?php 
+<?php
     require_once 'includes.html';
-    require_once 'header.html'; 
+    require_once 'header.html';
 ?>
