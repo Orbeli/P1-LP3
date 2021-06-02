@@ -62,3 +62,9 @@ Guilherme Henrique de Oliveira
 [E-mail](mailto:henriqueoliveiragui18@gmail.com)
 [GitHub](https://github.com/Guilherme1-jpg)
 [Linkedin](https://www.linkedin.com/in/guilherme-henrique-6b3389136/)
+
+Lucas Sanches Faustino
+
+[E-mail](lucassanchesfaustino3@hotmail.com)
+[GitHub](https://github.com/LucasSanchesFaustino)
+[Linkedin](https://www.linkedin.com/in/lucas-sanches-7374b4183/)
