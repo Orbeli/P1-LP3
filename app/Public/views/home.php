@@ -16,17 +16,6 @@
 
         <div class="card">
             <div class="circle">
-                <h2>Questionario</h2>
-            </div>
-
-            <div class="content">
-                <p>Descreva Sua Situacao</p>
-                <a class="nav-link" href="/public/views/questionario.php">Questionário<span class="sr-only">(current)</span></a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="circle">
                 <h2>Pacientes</h2>
             </div>
 

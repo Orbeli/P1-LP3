@@ -144,7 +144,7 @@
 		$conexao = new Connection();
 		$total = $conexao->dbConnection()->query('SELECT COUNT(*) FROM paciente')->fetchColumn();
 		if ($total != 0) {
-			$limit = 3;
+			$limit = 20;
 			$paginas = ceil($total / $limit);
 
 			// Verifica a pagina atual

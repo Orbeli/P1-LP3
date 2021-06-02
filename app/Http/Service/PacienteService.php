@@ -68,7 +68,7 @@ class PacienteService {
 				FROM paciente
 				WHERE LOWER(nome) LIKE :busca OR cpf LIKE :busca
 				ORDER BY id ASC
-				LIMIT :limit, OFFSET :offset
+				LIMIT :limit OFFSET :offset
 			";
 			$stmt = $this->conexao->prepare($query);
 			$stmt->bindValue(':busca', "%".$busca."%");
